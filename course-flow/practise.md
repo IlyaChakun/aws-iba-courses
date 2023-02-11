@@ -1271,13 +1271,13 @@ Requirements:
 # Monitoring tools
 
 #### AWS CloudWatch, X-Ray, ELK, NewRelic, Splunk
-
+(not included)
 
 
 
 <a name="config-smm-inspector"></a>
 # AWS Config, System Manager, Amazon Inspector
-
+(not included)
 
 
 
