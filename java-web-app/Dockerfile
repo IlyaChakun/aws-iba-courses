@@ -3,14 +3,15 @@ FROM maven:3.6-jdk-11 as maven_build
 WORKDIR /app
 
 #copy pom
-COPY ../pom.xml .
+COPY pom.xml .
 
 #resolve maven dependencies
 RUN mvn clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r target/
 
 #copy source
-COPY ../src ./src
-COPY ../cicd/sample-java-app/buildspec.yml .
+COPY src ./src
+#COPY ../src ./src
+#COPY ../cicd/sample-java-app/buildspec.yml .
 
 # build the app (no dependency download here)
 RUN mvn clean package  -Dmaven.test.skip
@@ -26,4 +27,4 @@ COPY --from=maven_build /app/target/test-cicd*.jar .
 
 CMD [ "java", "-jar","./test-cicd.jar" ]
 
-EXPOSE 8080:8080
+EXPOSE 8080
