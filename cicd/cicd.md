@@ -77,6 +77,10 @@ wget https://bucket-name.s3.region-identifier.amazonaws.com/latest/install
 ```
 aws-codedeploy-us-east-2 for instances in the US East (Ohio) region etc...
 
+```
+
+wget https://aws-codedeploy-us-east-2.s3.us-east-2.amazonaws.com/latest/install
+```
 Enter the following command:
 
 ```

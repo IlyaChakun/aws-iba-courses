@@ -5,10 +5,10 @@ os: linux
 
 hooks:
   ApplicationStop:
-    - location: scripts/stop-process.sh
+    - location: stop-process.sh
       timeout: 180
       runas: root
   ApplicationStart:
-    - location: scripts/start-process.sh
+    - location: start-process.sh
       timeout: 180
       runas: root
