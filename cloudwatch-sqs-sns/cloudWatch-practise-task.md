@@ -6,7 +6,7 @@
 - Subscribe to an SNS Topic. (via email) 
 - Check EC2 CPU Utilization Metrics in CloudWatch Metrics. 
 - Create CloudWatch Alarm. 
-- Testing CloudWatch Alarm by Stressing CPU Utilization. (stress --cpu 2 --timeout 60)
+  - Testing CloudWatch Alarm by Stressing CPU Utilization. (stress --cpu 2 --timeout 60)
 - Checking For an Email from the SNS Topic.
 - Checking the CloudWatch Alarm Graph.
 - Create a CloudWatch Dashboard. 
