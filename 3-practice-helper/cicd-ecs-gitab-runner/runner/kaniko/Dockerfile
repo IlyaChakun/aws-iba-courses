@@ -9,7 +9,7 @@ COPY --from=kaniko /kaniko/executor /kaniko/
 COPY --from=kaniko /kaniko/docker-credential-gcr /kaniko/
 COPY --from=kaniko /kaniko/docker-credential-ecr-login /kaniko/
 
-COPY ./config.json /kaniko/.docker/config.json
+COPY config.json /kaniko/.docker/config.json
 
 ENV DOCKER_CONFIG /kaniko/.docker/
 ENV DOCKER_CREDENTIAL_GCR_CONFIG /kaniko/.config/gcloud/docker_credential_gcr_config.json

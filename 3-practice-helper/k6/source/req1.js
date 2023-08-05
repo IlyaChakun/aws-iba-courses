@@ -1,6 +1,6 @@
-import http from 'k6/http';
+import http from '3-practice-helper/k6/http';
 import { sleep, check } from 'k6';
-import { Counter } from 'k6/metrics';
+import { Counter } from '3-practice-helper/k6/metrics';
 
 // A simple counter for http requests
 

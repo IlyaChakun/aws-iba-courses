@@ -1295,54 +1295,5 @@ Requirements:
 
 ### Complete lab
 
-[Build real time board with aws](https://aws.amazon.com/getting-started/hands-on/real-time-leaderboard-amazon-aurora-serverless-elasticache/)
+[Build real time board with awxzls](https://aws.amazon.com/getting-started/hands-on/real-time-leaderboard-amazon-aurora-serverless-elasticache/)
 
-### Final Project
-
-Create a web application to upload \ download files.
-
-AWS Stack:
-ECS, ECR, ALB, S3, WAF, RDS or DynamoDB, Route53, ACM, ElasticCache(Redis) or DAX
-Advanced: Cognito
-
-Develop stage:
-
-* You need to create a web application based on Java or Python or NodeJs.
-* In the database we will store only **image metadata**.
-* For actual file storage we will use **S3 bucket**.
-* For the first version we can store all files in the same folder. Then you need to implement logic to create a separate folder
-for each user where his files will be stored.
-* For the application layer cache you should use redis or dax (based on a db choice)
-
-
-Logic:
-
-* Sign up and Login
-* Upload file (image, doc etc.)
-* File can be public available or private (if private - then only owner can download it, if public then anyone)
-* Get list of files in db (just metadata)
-* Get metadata about particular file
-* Download particular file
-* Every file has Owner
-* Create S3Service as a portable solution (meaning you can share service with anyone, and it will require no chance to use it
-with different logic)
-
-Flow:
-
-_Please create your own flow and check it with me_
-
-##### Example:
-* Create s3 bucket in aws
-* Develop sign up\login logic using RDS
-* Develop S3 service
-* Develop file uploading\downloading logic
-* Create RDS database and connect to it via application
-
-* Db: PostgreSql or mysql
-* File storage: S3
-
-##### Test it via postman.
-
-Deploy stage:
-
-* Application should be deployed by hands and the last version should be based on Cloudformation.
