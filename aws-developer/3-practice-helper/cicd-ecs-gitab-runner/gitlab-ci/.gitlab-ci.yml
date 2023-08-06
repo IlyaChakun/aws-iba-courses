@@ -1,0 +1,70 @@
+stages:
+  - build
+  - docker
+  - deploy
+
+variables:
+  REGION: $AWS_REGION
+  BASE_REPOSITORY_URI: $AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com
+  REPOSITORY_URI: $AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com/test-repo
+
+before_script:
+  - echo "$REPOSITORY_URI"
+  - echo "$AWS_ACCOUNT"
+  - echo "$AWS_REGION"
+  - COMMIT_HASH="$(echo $CI_COMMIT_SHA | head -c 8)"
+  - IMAGE_TAG="${CI_PIPELINE_IID}_${COMMIT_HASH}"
+
+maven_build:
+  stage: build
+  variables:
+    FARGATE_TASK_DEFINITION: "gitlab-runner-default-task"
+
+  script:
+    - echo "Building app..."
+    - ls
+    - mvn clean install
+    - echo "Finished building the app."
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - target/*.jar
+
+
+build ecr:
+  stage: docker
+  variables:
+    FARGATE_TASK_DEFINITION: "gitlab-runner-kaniko-task"
+  script:
+    - mkdir -p /root/.aws
+    - echo $AWS_CREDENTIALS | base64 -d > /root/.aws/credentials
+    - cat /root/.aws/credentials
+    - echo "{\"credHelpers\":{\"$BASE_REPOSITORY_URI\":\"ecr-login\"}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $REPOSITORY_URI:$CI_COMMIT_TAG
+
+
+deployDevFargate:
+  stage: deploy
+  cache: []
+  only:
+    - development
+    - /release.*/
+  script:
+    - EXEC_ROLE_ARN=arn:aws:iam::${AccountId}:role/uatTasksExeRole
+    - TASK_ROLE_ARN=arn:aws:iam::${AccountId}:role/uat_${CI_PROJECT_NAME}_role_fargate
+    - CLUSTER_NAME=uatCluster
+    - TASK_DEFINITION_NAME=uat_${CI_PROJECT_NAME}_api_task_fargate
+    - SERVICE_NAME=${CI_PROJECT_NAME}_api_fargate
+    - echo $REPOSITORY_URI:$IMAGE_TAG
+    - TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition "${TASK_DEFINITION_NAME}" --region "${REGION}")
+    - CPU_PARAM=$(echo $TASK_DEFINITION | jq '.taskDefinition.cpu | tonumber')
+    - MEMORY_PARAM=$(echo $TASK_DEFINITION | jq '.taskDefinition.memory | tonumber')
+    - NEW_CONTAINER_DEFINITION=$(echo $TASK_DEFINITION | jq --arg IMAGE "${REPOSITORY_URI}:${IMAGE_TAG}" '.taskDefinition.containerDefinitions[0].image = $IMAGE | .taskDefinition.containerDefinitions[0]')
+    - echo ${TASK_DEFINITION}
+    - echo ${NEW_CONTAINER_DEFINITION}
+    - echo ${CPU_PARAM}
+    - echo ${MEMORY_PARAM}
+    - echo "Registering new container definition..."
+    - aws ecs register-task-definition --region "${REGION}" --family "${TASK_DEFINITION_NAME}" --container-definitions "${NEW_CONTAINER_DEFINITION}" --execution-role-arn "${EXEC_ROLE_ARN}" --task-role-arn "${TASK_ROLE_ARN}" --requires-compatibilities "FARGATE" --network-mode "awsvpc" --cpu ${CPU_PARAM} --memory ${MEMORY_PARAM}
+    - echo "Updating the service..."
+    - aws ecs update-service --region "${REGION}" --cluster "${CLUSTER_NAME}" --service "${SERVICE_NAME}"  --task-definition "${TASK_DEFINITION_NAME}"

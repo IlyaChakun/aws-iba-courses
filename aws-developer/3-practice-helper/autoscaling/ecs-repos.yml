@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Version 1
+
+Parameters:
+
+  EnvironmentName:
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - prod
+    Description: "A friendly environment name that will be used for namespacing all repos. Example: gitlab"
+
+  ServiceName:
+    Type: String
+    Default: test-service
+    Description: "A service name with only lowercase letters, numbers and '-'.  Must match the ECR repository."
+
+Resources:
+
+  GitlabRunnerManager:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: !Sub ${EnvironmentName}-${ServiceName}

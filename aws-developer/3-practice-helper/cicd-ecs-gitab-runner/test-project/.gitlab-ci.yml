@@ -1,0 +1,18 @@
+
+stages:
+  - build
+  - deploy
+
+maven_build:
+  stage: build
+  image: maven:3.6.3-jdk-11
+  script:
+    - echo "Building app..."
+    - ls
+    - mvn clean install
+    - echo "Finished building the app."
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - target/*.jar
+

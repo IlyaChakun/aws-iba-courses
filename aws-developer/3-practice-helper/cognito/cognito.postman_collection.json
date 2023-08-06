@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "aae2ea52-5873-4ac8-9664-6d78b3951f05",
+		"name": "cognito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13365938"
+	},
+	"item": [
+		{
+			"name": "Cognito login",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "{{app-client-secret}}",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{app-client-id}}",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "{{cognito-domain}}/oauth2/authorize",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "{{redirect_url}}",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "{{cognito-domain}}/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "AccessToken",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Identity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"try{\r",
+							"    var jsonData = JSON.parse(responseBody);\r",
+							"    pm.environment.set(\"identity_id\", jsonData.IdentityId);\r",
+							"}catch(err){\r",
+							"    console.log(err)\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-AMZ-TARGET",
+						"value": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.GetId",
+						"type": "text"
+					},
+					{
+						"key": "CONTENT-TYPE",
+						"value": "application/x-amz-json-1.1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IdentityPoolId\": \"{{identity_pool_id}}\",\r\n    \"Logins\": {\r\n        \"cognito-idp.{{region}}.amazonaws.com/{{user_pool_id}}\": \"{{id_token}}\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cognito-identity.{{region}}.amazonaws.com/",
+					"protocol": "https",
+					"host": [
+						"cognito-identity",
+						"{{region}}",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Temp Creds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"try{\r",
+							"    var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"    pm.environment.set(\"AccessKeyId\", jsonData.Credentials.AccessKeyId);\r",
+							"    pm.environment.set(\"SecretKey\", jsonData.Credentials.SecretKey);\r",
+							"    pm.environment.set(\"SessionToken\", jsonData.Credentials.SessionToken);\r",
+							"\r",
+							"}catch(err){\r",
+							"    console.log(err)\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "CONTENT-TYPE",
+						"value": "application/x-amz-json-1.1",
+						"type": "text"
+					},
+					{
+						"key": "X-AMZ-TARGET",
+						"value": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.GetCredentialsForIdentity",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IdentityId\": \"{{identity_id}}\",\r\n    \"Logins\": {\r\n        \"cognito-idp.{{region}}.amazonaws.com/{{user_pool_id}}\": \"{{id_token}}\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cognito-identity.{{region}}.amazonaws.com/",
+					"protocol": "https",
+					"host": [
+						"cognito-identity",
+						"{{region}}",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request to AWS Service",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "service",
+							"value": "{{aws_service}}",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "{{SessionToken}}",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{region}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{SecretKey}}",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "{{AccessKeyId}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://test-bucket-cognitoalo.{{aws_service}}.{{region}}.amazonaws.com/",
+					"protocol": "https",
+					"host": [
+						"test-bucket-cognitoalo",
+						"{{aws_service}}",
+						"{{region}}",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

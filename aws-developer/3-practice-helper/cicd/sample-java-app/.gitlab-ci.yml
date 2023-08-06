@@ -1,0 +1,14 @@
+variables:
+  DOCKER_REGISTRY: 932279645368.dkr.ecr.ca-central-1.amazonaws.com/cicd
+  AWS_DEFAULT_REGION: ca-central-1
+  APP_NAME: config
+  DOCKER_HOST: tcp://docker:2375
+
+publish:
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+  script:
+    - docker build -t $DOCKER_REGISTRY/$APP_NAME:latest .
+    - aws ecr get-login-password | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+    - docker push $DOCKER_REGISTRY/$APP_NAME:latest

@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Version 1
+
+Parameters:
+
+  EnvironmentName:
+    Type: String
+    Default: gitlab
+    AllowedValues:
+      - gitlab
+    Description: "A friendly environment name that will be used for namespacing all repos. Example: gitlab"
+
+Resources:
+
+  GitlabRunnerManager:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: "gitlab-runner-manager"
+
+  GitlabRunnerKaniko:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: "gitlab-runner-kaniko"
+
+  GitlabRunnerDefault:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: "gitlab-runner-default"
+
+  GitlabRunnerGradle:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: "gitlab-runner-gradle"
