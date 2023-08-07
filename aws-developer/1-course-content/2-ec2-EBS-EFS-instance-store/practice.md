@@ -127,7 +127,7 @@ cd efs
 - Delete the EC2 instance, then verify that your EBS volume is still there.
 - Delete it.
 
-## Instance store
+## Instance store: Create EC2 with instance store
 
 ### Step 1: Choose an Instance Type that supports instance store
 

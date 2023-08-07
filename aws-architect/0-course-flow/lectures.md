@@ -24,18 +24,34 @@
 19. New: Other services + Cost Calculations: SES, Pinpoint, Elastic Transcoder, AWS Batch, AppFlow, Amplify, AWS Budget,
     AWS Cost Explorer. How calculate price of your AWS solution?
 20. New: Architecture Presentation and Discussion: Message Driven vs Event Driven, HPC, Caching Strategies in AWS
-21. New: Architecture Presentation and Discussion: Serverless architectures, Disaster Recovery Architectures
+21. New: Architecture Presentation and Discussion: CloudNative vs Cloud Agnostic, Serverless architectures, Disaster
+    Recovery Architectures
 
 # Practice (11)
 
-1. EFS, Ec2, Global Accelerator, ALB. RDS with failover simulation
-2. S3 + Cloudfront, Labmda@Edge, CloudFront labmda
-3. ECS Deployment with Fargate, with Ec2, Autoscaling using Target Scaling Policies
-4. VPC 1
-5. VPC 2
-6. Dynamodb, Dynamodb streams, dynamodb indexices Api Gateway, Labmda, SNS, SQS
-7. Glue + S3 (ETL), DMS,
-8. Kinesis
-9. Building a Resilient AWS Architecture to withstand hardware failovers and get notified using SNS
-10. Building a Food Ordering Chatbot Website (todo)
-11. System Design Tasks
+* EFS, Ec2, Global Accelerator, ALB, RDS with failover simulation
+* Automating EBS Snapshot Creation Using CloudWatch and SNS
+* S3 + Cloudfront, Labmda@Edge, CloudFront labmda
+* ECS Deployment with Fargate, with Ec2, Autoscaling using Target Scaling Policies
+* VPC 1
+* VPC 2
+* Glue + S3 (ETL), DMS,
+* Kinesis
+* Building a Resilient AWS Architecture to withstand hardware failovers and get notified using SNS
+* Building a Food Ordering Chatbot Website (todo)
+* System Design Tasks
+* Practice tests
+* Practice tests
+* ML
+    15. Building a Food Ordering Chatbot Website
+* Dynamodb, Dynamodb streams, dynamodb indexices Api Gateway, Labmda, SNS, SQS
+
+todo: two sessions for test practise
+
+
+
+
+
+## Building a Resilient AWS Architecture to withstand hardware failovers and get notified using SNS
+
+

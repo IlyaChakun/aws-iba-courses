@@ -4,7 +4,7 @@
 
 Launch an EC2 instance, set up a web server using httpd and HTML page, and test it via the public IP address.
 
-### 2. Setup EC2 using Userdata
+### 2. Setup webserver on EC2 using Userdata
 
 Automate step 1 using userdata. Set up a web server via userdata and test it via a public IP address.
 
@@ -53,17 +53,6 @@ Reproduce the previous step, attach an Elastic IP, reboot the instance, and test
   - Add required tags.
 - Test your auto scaling by terminating one instance.
 - Delete your resources.
-
-### 6. Setup Highly Available Server Stack using ALB + Target Group
-
-- Create a fleet of EC2 instances (at least 2 servers) using your userdata. You can use the Launch template from the
-  previous step.
-- Create a target group (use Instances for target type).
-- Create an Application Load Balancer (ALB). Choose at least two subnets, and don't forget to create a security group
-  for ALB.
-- Test your application via the ALB DNS name.
-- Ensure your server is not accessible via server public IP (only from ALB). This should be done via properly configured
-  security group.
 
 ### 7. Spot Fleet
 

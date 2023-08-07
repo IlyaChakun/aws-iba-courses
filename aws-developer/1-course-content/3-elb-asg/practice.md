@@ -1,11 +1,23 @@
+## Setup Highly Available Server Stack using ALB + Target Group
+
+- Create a fleet of EC2 instances (at least 2 servers) using your userdata. You can use the Launch template from the
+  previous step.
+- Create a target group (use Instances for target type).
+- Create an Application Load Balancer (ALB). Choose at least two subnets, and don't forget to create a security group
+  for ALB.
+- Test your application via the ALB DNS name.
+- Ensure your server is not accessible via server public IP (only from ALB). This should be done via properly configured
+  security group.
+-
+
 # Understanding AWS ALB Path Based Routing
 
 ## Create webServers
 
 * Create 4 webservers with httpd server and html page
-    * 1 and 2 server content: default page
-    * 3 server: admin page
-    * 4 server: user page
+  * 1 and 2 server content: default page
+  * 3 server: admin page
+  * 4 server: user page
 
 ```
 #!/bin/bash
@@ -47,12 +59,12 @@ systemctl restart httpd
 ## Create NLB
 
 * Target group name: Enter Apache-TG
-    * Protocol: Choose TCP
-    * Port: 80
+  * Protocol: Choose TCP
+  * Port: 80
 * Create TG called webserver-TG and assign your instance to it
 * Create second TG called nginx-tg
-    * Port: 8080
-    * Protocol: TCP
+  * Port: 8080
+  * Protocol: TCP
 * Create a new listener for nginx-tg for port 8080
 * Connect to your Ec2 and install nginx on it
 
@@ -165,3 +177,11 @@ aws elbv2 describe-target-health --target-group-arn <TG2 ARN>
 ## Test ALB using DNS path
 
 ![img.png](assets/alb-cli.png)
+
+# ALB with Multiple Target groups for ECS Cluster
+
+## Demo to understand how rules works
+
+## Https redirect rule
+
+## Launch template from prepared cloudformation
