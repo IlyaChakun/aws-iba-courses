@@ -101,6 +101,7 @@ Total Practices: **20**
     * Deploy a static website using S3
     * Setup lifecycle policy for s3 bucket files
     * S3 Encryption
+    * Discover sensitive data present in S3 bucket using Amazon Macie
 
 * ECS
     * Deploy web application using ECS Based on Ec2
