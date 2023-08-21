@@ -88,7 +88,7 @@ Total Practices: **20**
     * RDS Multi-AZ + failover In custom VPC + Cloudwatch insights
     * Create an Aurora database with PostgreSQL or Mysql engine
     * Aurora serverless
-    * ElastiCache: Renew caching strategies
+    * ElastiCache: Renew caching strategies (theory + diagram)
 
 * CloudFront, Global Accelerator, Kinesis
     * Introduction to Amazon CloudFront
@@ -108,19 +108,26 @@ Total Practices: **20**
     * Deploy web application using ECS Based on Fargate
 
 * DynamoDB, DAX
+    * DynamoDB PITR & On-Demand Backup and Restore
+    * DynamoDB & Global Secondary Index
+    * Configuring DynamoDB Streams Using Lambda
+    * DynamoDB RCU, WCU math (practice)
 
 * Lambda, Step Functions, X-ray, API Gateway, SAM
     * Create an architecture to store S3 objects metadata inside dynamodb using lambdas (ask to write code before)
     * DynamoDB API Gateway Lambda Secret Manager X-Ray((ask to write code before))
 
 * CI/CD
-    *
+    * Create and configure Codepipeline with Elastic Beanstalk
+    * Create and Deploy applications using CodeDeploy and CodePipeline
+    * Deploy sample containerized application on ECS using CodeDeploy
+    * Demo & theory: Cicd with gitlab using aws resources
 
 * DDOS: WAF, Shield, GuardDuty, Personal Health
     * WAF & ALB
     * Cloudfront & WAF
     * ECS + ECR + ALB + **WAF** + ROUTE53
 
-* Practice Test
+* Practice Test 1
 
-* Practice Test
+* Practice Test 2

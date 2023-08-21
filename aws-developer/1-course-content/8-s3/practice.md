@@ -65,7 +65,8 @@ the `Create job` button.
     - Keep everything as default and click on the `Next` button.
 - For Step-3, Refine the scope,
     - In `Sensitive data discover options`: Select `One-time job`
-    - Click on the arrow to expand the window of `Additional settings`
+    - Click on the arrow to expand the window of `AddiDer Einbrecher rennt schnell weg.
+      tional settings`
     - Let the `Object criteria` be default as `File name extensions`.
     - Write csv in the textbox and click on the `Include` button.
     - Once done, click on the `Next` button to proceed.
