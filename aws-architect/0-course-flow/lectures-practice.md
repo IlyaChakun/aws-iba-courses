@@ -35,7 +35,6 @@
    * Create and run Amazon EKS Cluster using Spot instance
    * Create Deployment for 2 albs with ec2 instances behind in different regions and make it available using Global Accelerator
 
-
 2. Refresher: EBS, CloudWatch, SNS, Step Functions, DMS, RDS
   * Automating EBS Snapshot Creation Using CloudWatch and SNS
   * Creating a Serverless Workflow with AWS Step Functions
@@ -49,16 +48,21 @@
   * Setup lifecycle policy for s3 bucket files
   * Discuss Storage Classes
 
-4. Refresher: ECS Deployment with Fargate, with Ec2, Autoscaling using Target Scaling Policies
+4. SQS SNS, CloudWatch, Rds, System Manager, Config
+   * Building a Resilient AWS Architecture to withstand hardware failovers and get notified using SNS
+   * Use AWS Systems Manager document & Resource Group to install Apache on EC2 Instance
+   * Check the Compliance status of Security group using AWS Config
+
+5. Refresher: ECS Deployment with Fargate, with Ec2, Autoscaling using Target Scaling Policies
   * Deploy web application using ECS Based on Ec2 (from developer)
   * Deploy web application using ECS Based on Fargate (from developer)
   * Add Target Scaling Policy for ECS Cluster above
   * Deploy ECS using Cloudformation
 
-5. Refresher: VPC 1
-6. VPC 2
+6. Refresher: VPC 1
+7. VPC 2
 
-7. Security
+8. Security
   * Discover sensitive data present in S3 bucket using Amazon Macie
   * ECS + ECR + ALB + **WAF** + ROUTE53 (from developer)
   * How to Encrypt an S3 bucket using AWS KMS and monitor the activities with CloudTrail
@@ -66,19 +70,11 @@
   * Check AWS Resources in Trusted Advisor
 
 
-
-8. Data & Analytics: Kinesis,Glue + S3 (ETL) 
+9. Data & Analytics: Kinesis,Glue + S3 (ETL) 
   * Build a real time data streaming system with Amazon Kinesis Data Streams
   * Build a real time data streaming system with Amazon Kinesis Data Stream and Kinesis Agent
   * Perform ETL operation in Glue with S3
   * EMR 
-
-
-9. SQS SNS, CloudWatch, Rds, System Manager, Config
-  * Building a Resilient AWS Architecture to withstand hardware failovers and get notified using SNS
-  * Use AWS Systems Manager document & Resource Group to install Apache on EC2 Instance
-  * Check the Compliance status of Security group using AWS Config
-
 
 
 10. Dynamodb, Dynamodb streams, dynamodb indexes Api Gateway, Lambda, SNS, SQS
@@ -87,15 +83,12 @@
     * Export Data from DynamoDB to S3 as JSON File
     * Build API Gateway with different stages using stage variables
 
-
 11. ML
   * Building a Food Ordering Chatbot Website 
   * Amazon Rekognition using AWS Lambda
   * ML aws services refresher
 
 12. System Design Tasks
-    
-
 13. Practice tests
 14. Practice tests
 
