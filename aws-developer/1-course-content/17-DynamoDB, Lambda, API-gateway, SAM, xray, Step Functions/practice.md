@@ -1,5 +1,16 @@
 # DynamoDB Introduction
 
+* Sign in to AWS Management Console.
+* Create a DynamoDB table.
+  - Table Name: Enter mydynamodbtable
+  - Primary key: Enter companyid and select Number
+  - Add sort key: Enter name in the respective field and select String.
+* Insert data into that DynamoDB table.(Add 3-5 items)
+  - companyid     : 1
+  - name        : John
+* Search for an item in the DynamoDB table.
+* Validation of the lab.
+
 ## DynamoDB & Global Secondary Index
 
 ## DynamoDB PITR & On-Demand Backup and Restore
