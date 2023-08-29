@@ -12,7 +12,7 @@ Architecture Diagram
   - companyid     : 1
   - name        : John
 * Search for an item in the DynamoDB table.
-* Validation of the lab.
+
 
 ## DynamoDB & Global Secondary Index
 
