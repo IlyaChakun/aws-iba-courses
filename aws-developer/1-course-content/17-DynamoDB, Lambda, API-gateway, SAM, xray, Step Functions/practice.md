@@ -1,6 +1,9 @@
 # DynamoDB Introduction
 
-* Sign in to AWS Management Console.
+Architecture Diagram
+
+![img.png](assets/introDynamoDB.PNG)
+
 * Create a DynamoDB table.
   - Table Name: Enter mydynamodbtable
   - Primary key: Enter companyid and select Number
