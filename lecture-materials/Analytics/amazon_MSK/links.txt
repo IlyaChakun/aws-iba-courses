@@ -1,0 +1,1 @@
+[link on fargate+msk)[https://aws.amazon.com/blogs/big-data/power-your-kafka-streams-application-with-amazon-msk-and-aws-fargate/]
