@@ -12,7 +12,7 @@
 7. Refresher: ECS, Ecr, EKS, Copilot, Cloudformation
 8. Refresher: Dynamodb, Lambda, Api Gateway, SAM
 9. Refresher + new VPC 1
-10. Refresher + new VPC 2
+10. Refresher + new VPC 2: Transit Gateway, Site to Site VPN, Direct Connect
 11. New + Refresher: System Manager, Config, CloudWatch, CloudTrail, EventBridge
 12. New: IAM Advanced: Control Tower, AD, AWS Organizations, Cognito, IAM Policies
 13. New Data Storage: AWS Snow Family, FSx, Storage Gateway, AWS transfer Family, DataSync
@@ -92,8 +92,6 @@
 13. Practice tests
 14. Practice tests
 
-
-todo: two sessions for test practise
 
 
 
