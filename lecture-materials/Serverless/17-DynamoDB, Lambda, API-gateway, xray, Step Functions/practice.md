@@ -1,7 +1,92 @@
 # DynamoDB Introduction
 
+Architecture Diagram
+
+![img.png](assets/introDynamoDB.PNG)
+
+* Create a DynamoDB table.
+  - Table Name: Enter `mydynamodbtable`
+  - Primary key: Enter `companyid` and select
+  - Add sort key: Enter name in the respective field and select String.
+* Insert data into that DynamoDB table.(Add 3-5 items)
+  - companyid     : 1
+  - name        : John
+* Search for an item in the DynamoDB table.
+
+
 ## DynamoDB & Global Secondary Index
 
+Architecture Diagram
+
+![img.png](assets/DynamoDBGSL.PNG)
+
+**Note: If the Global secondary index is not showing in the Scan list, Please wait another 5 to 10 minutes and reload the entire page. This is an AWS side delay.**
+
+* Create DynamoDB Table
+  - Table name : `WhizOrderTable`
+  - Partition Key : `UserName` (String)
+  - sort key : `OrderID` (String)
+* Create Item
+  - Once you select the create item, you’ll see `UserName` and `OrderID`, but we need 2 more attributes in our table. Click on Add new attribute and then select String from the drop down menu.
+  - Give the attribute name as `ReturnDate`
+  - Click on Add new attribute again and select String from the drop down menu.
+  - Now Give the attribute name as `UserAmount`
+  - Now enter the values as shown below:
+------------------------------------------------------------------------------
+    UserName : HarryPotter
+    OrderID : 20160630-12928
+    ReturnDate : 20190705
+    UserAmount : 142.23
+------------------------------------------------------------------------------
+  - Navigate to the `Tables` and click on `Index` tab next to Overview section.
+  - Click on `Create Index`.
+  - Enter the Paritition key as `ReturnDate` and Sort key as `UserAmount`.
+  - Leave everything as default and Click on Create index and wait until the index state changes to Active.
+  - Move to the Items tab and click on Create item. Insert the following additional data into the table and click on Create item:
+------------------------------------------------------------------------------
+    UserName :  HarryPotter
+    OrderID :  20160630-28176
+    ReturnDate :  20190513
+    UserAmount :  88.30
+
+    UserName :  Ron
+    OrderID :  20170609-25875
+    ReturnDate :  20190628
+    UserAmount :  116.86
+
+    UserName :  Ron
+    OrderID :  20170609-4177
+    ReturnDate :  20190731
+    UserAmount :  27.89
+
+    UserName :  Voldemort
+    OrderID :  20170609-17146
+    ReturnDate :  20190511
+    UserAmount :  114.00
+
+    UserName :  Voldemort
+    OrderID :  20170609-18618
+    ReturnDate :  20190615
+    UserAmount :  122.45
+------------------------------------------------------------------------------
+ 
+* Use Global Secondary Index to Fetch Data
+  - Now go to Explore Table items and click on the Scan or Query option for WhizOrderTable.
+  - Let`s try with the Scan option to search for data.
+  - Select the “Scan” option -> Table or index : Select `ReturnDate-UserAmount-index` -> Expand Filters -> click on Run button.
+------------------------------------------------------------------------------
+    Attribute name : Enter ReturnDate
+    Type : Select String
+    Condition : Select Between
+    Value : Enter 20190501 and 20190531
+------------------------------------------------------------------------------
+  - Let`s try with the Query option to search for some data. Click on Query next to Scan.
+------------------------------------------------------------------------------
+    Table or index : Select ReturnDate-UserAmount-index
+    ReturnDate : Enter 20190628
+    UserAmount (Sort key) : Select Greater than or equal to
+    Enter sort key : Enter 100
+------------------------------------------------------------------------------
 ## DynamoDB PITR & On-Demand Backup and Restore
 
 --------
