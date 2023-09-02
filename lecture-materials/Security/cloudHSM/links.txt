@@ -1,0 +1,6 @@
+https://www.hashicorp.com/resources/hashicorp-and-aws-integrating-cloudhsm-with-vault-e
+
+
+https://aws.amazon.com/blogs/security/understanding-aws-cloudhsm-cluster-synchronization/
+
+https://www.slideshare.net/AmazonWebServices/deep-dive-aws-cloudhsm
