@@ -1,0 +1,4 @@
+https://towardsdatascience.com/aws-application-migration-service-architecture-explained-2947348ef194
+
+
+https://awstip.com/migrate-your-applications-using-aws-mgn-b5bd397a9255
