@@ -15,7 +15,7 @@
 10. Refresher + new VPC 2: Transit Gateway, Site to Site VPN, Direct Connect
 11. New + Refresher: System Manager, Config, CloudWatch, CloudTrail, EventBridge
 12. New: IAM Advanced: Control Tower, AD, AWS Organizations, Cognito, IAM Policies
-13. New Data Storage: AWS Snow Family, FSx, Storage Gateway, AWS transfer Family, DataSync
+13. New Data Storage & Data Migration: AWS Snow Family, FSx, Storage Gateway, AWS transfer Family, DataSync
 14. New Databases: DocumentDB, Neptune, Keyspaces, QLDB, TimeStream, All Databases Comparison & use cases
 15. New: Data & Analytics: Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
 16. New: ML + Security: GuardDuty, Inspector, Macie, FirewallManager, Trusted Advisor, amazon detective

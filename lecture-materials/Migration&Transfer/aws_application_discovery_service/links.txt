@@ -1,0 +1,5 @@
+https://aws.amazon.com/blogs/compute/how-to-migrate-multi-tier-environments-using-the-aws-server-migration-service/
+
+
+https://aws.amazon.com/blogs/architecture/multi-region-migration-using-aws-application-migration-service/
+
