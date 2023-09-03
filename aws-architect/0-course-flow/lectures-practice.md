@@ -3,7 +3,7 @@
 
 # Lectures (21)
 
-1. Refresher: IAM refresher, Ec2 refresher
+1. Refresher: IAM refresher, Ec2 refresher + new AWS SSO, CloudShell, AWS ORG, STS, AWS Artifact
 2. Refresher: EBS, EFS, Instance store refresher, ELB, TG, ASG
 3. Refresher: Database Refresher: RDS, Aurora. Cache: ElastiCache
 4. Refresher: S3 Refresher
@@ -18,8 +18,8 @@
 13. New Data Storage: AWS Snow Family, FSx, Storage Gateway, AWS transfer Family, DataSync
 14. New Databases: DocumentDB, Neptune, Keyspaces, QLDB, TimeStream, All Databases Comparison & use cases
 15. New: Data & Analytics: Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
-16. New: ML
-17. New: Security: KMS, CloudHsm, Shield, Waf, Secret Manager, SSM Parameter Store, GuardDuty, Inspector, Macie, FirewallManager, Trusted Advisor
+16. New: ML + Security: GuardDuty, Inspector, Macie, FirewallManager, Trusted Advisor, amazon detective
+17. New: Security: KMS, CloudHsm, Shield, Waf, Secret Manager, SSM Parameter Store, 
 18. New: Disaster Recovery & Migration: DMS, AWS Backup, MGN, VMware
 19. New: Other services + Cost Calculations: SES, Pinpoint, Elastic Transcoder, AWS Batch, AppFlow, Amplify, AWS Budget,
     AWS Cost Explorer. How calculate price of your AWS solution?

@@ -1,0 +1,1 @@
+https://aws.amazon.com/blogs/security/introducing-aws-single-sign-on/

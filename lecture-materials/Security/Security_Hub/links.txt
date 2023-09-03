@@ -1,0 +1,1 @@
+https://aws.amazon.com/blogs/security/how-to-enrich-aws-security-hub-findings-with-account-metadata/
