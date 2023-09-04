@@ -23,7 +23,7 @@ Architecture Diagram
 **Note: If the Global secondary index is not showing in the Scan list, Please wait another 5 to 10 minutes and reload the entire page. This is an AWS side delay.**
 
 * Create DynamoDB Table
-  - Table name : `WhizOrderTable`
+  - Table name : `OrderTable`
   - Partition Key : `UserName` (String)
   - sort key : `OrderID` (String)
 * Create Item
@@ -71,7 +71,7 @@ Architecture Diagram
 ------------------------------------------------------------------------------
  
 * Use Global Secondary Index to Fetch Data
-  - Now go to Explore Table items and click on the Scan or Query option for WhizOrderTable.
+  - Now go to Explore Table items and click on the Scan or Query option for OrderTable.
   - Let`s try with the Scan option to search for data.
   - Select the “Scan” option -> Table or index : Select `ReturnDate-UserAmount-index` -> Expand Filters -> click on Run button.
 ------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ Architectural Diagram
 **Create S3 bucket and upload CSV files.**
 
 ------------------------------------------------------------------------------
-    Bucket Name     : whizlabs.backup.restore.0504
+    Bucket Name     : labs.backup.restore.0504
     Region : Select your Region
     Leave other settings as default.
     Click on the Create Bucket button.
@@ -210,7 +210,7 @@ configure the values required for the lambda function.  Provide the following va
     Event Template    : Select S3-put from drop-down box.
     Event Name        : Enter insert
     In the displayed code, do the following corrections.
-    Line 23 - Provide S3 bucket name - Enter whizlabs.backup.restore.0504[Make sure to enter your bucket name]
+    Line 23 - Provide S3 bucket name - Enter labs.backup.restore.0504[Make sure to enter your bucket name]
     Line 30 - Provide .csv file name – Enter Movies-1.csv
     Click on Save button to save the code.
 ------------------------------------------------------------------------------
@@ -303,7 +303,7 @@ Architecture Diagram
 **Create Amazon DynamoDB table.**
 
 - In the DynamoDB dashboard, click on Create Table and then provide following values:
-  - Table Name: Enter `whizlabs_dynamodb_table`
+  - Table Name: Enter `labs_dynamodb_table`
   - Primary Key :  Enter `id` and click on the drop-down to select `String` and click on Create Table.
   - Your table will be created within 2-3 minutes.
 
@@ -338,20 +338,20 @@ String from the drop down menu and enter the appropriate values and click on Cre
 - Click on Create function and choose  Author from Scratch
 
 ------------------------------------------------------------------------------
-    Function Name :  whizlabs_dynamodb_function
+    Function Name :  labs_dynamodb_function
     Runtime : Select Python 3.8 (Choose from the Dropdown)
     Architecture : Select x86_64
     Click on Change default execution Role and then select Use an existing Role
-    Choose whizlabs_dynamodb_role_<RANDOM_NUMBER>  from the drop-down menu
+    Choose labs_dynamodb_role_<RANDOM_NUMBER>  from the drop-down menu
     Click on Create function
 ------------------------------------------------------------------------------
 
-- Once the function is created, select the function (`whizlabs_dynamodb_function`) which you created from the Lambda dashboard.
+- Once the function is created, select the function (`labs_dynamodb_function`) which you created from the Lambda dashboard.
 - To open the existing code, under Code Source, double click `lambda_function.py`
-- Download Zip file and unzip it. Open the `whizlabs_dynamodb_function.py` file, copy the code and 
+- Download Zip file and unzip it. Open the `labs_dynamodb_function.py` file, copy the code and 
 replace the existing code in the `lambda_function.py` under Code Source.
 - If you have created the DynamoDB table with any other name, make the changes in code, on line number 6.
-- Navigate to the S3 bucket console and check the name of the bucket created for you i.e whizlabs.<Random number>
+- Navigate to the S3 bucket console and check the name of the bucket created for you i.e labs.<Random number>
 - Make the changes in code by replacing the bucket name on line number 23 with the bucket name created for you.
   - `Note: If there is more than 1 bucket, you should use the name of the latest created bucket.`
 - Click on Deploy button.
@@ -362,7 +362,7 @@ a change. We also configured a text file containing the DynamoDB table to be dro
 
 **Add Triggers to the DynamoDB table.**
 
-- Select the table `whizlabs_dynamodb_table`.
+- Select the table `labs_dynamodb_table`.
 - On the right side select `Exports and streams`.
 - Now scroll down to `DynamoDB stream details` and click on Enable.
 - Now, leave the settings as default and click on Enable stream.
@@ -370,7 +370,7 @@ a change. We also configured a text file containing the DynamoDB table to be dro
 - Under Trigger section, click on Create trigger button.
 
 ------------------------------------------------------------------------------
-    Function :  Choose the function which we have created i.e whizlabs_dynamodb_function
+    Function :  Choose the function which we have created i.e labs_dynamodb_function
     BatchSize  : 1
     Enable Trigger : Check
 ------------------------------------------------------------------------------
@@ -380,9 +380,9 @@ The DynamoDB Stream trigger will be ready once the State of the trigger is Enabl
 **Make changes to the contents of the DynamoDB table.** 
 
 - We will make some changes in the DynamoDB table, which will kick off the lambda to deliver a database snapshot to S3.
-- In the DynamoDB  select the table we have created `whizlabs_dynamodb_table`.
+- In the DynamoDB  select the table we have created `labs_dynamodb_table`.
 - Click on Create item button.
-- Now in the table `whizlabs_dynamodb_table`, we will insert a new item with the following parameters:
+- Now in the table `labs_dynamodb_table`, we will insert a new item with the following parameters:
 
 ------------------------------------------------------------------------------
     id  : Enter 15
@@ -393,11 +393,11 @@ The DynamoDB Stream trigger will be ready once the State of the trigger is Enabl
 
 - Click on Explore Table Items and Select Item having id 12 from Actions select Edit item
 - Change the `first name` to `Arun`
-- Select the table `whizlabs_dynamodb_table`.
+- Select the table `labs_dynamodb_table`.
 - On the right side select `Exports and streams` and go to the `Triggers tab` in the Exports and streams section and then 
 press the refresh button. Now the DynamoDB Streams will trigger the Lambda function to dump the items of the table into 
 a text file named `data.txt` (it will take a minute to do this) and it will upload the file to the S3 bucket
-- To verify that, navigate to the S3 and click on the bucket named `whizlabs.<RANDOMNUMBER>`. Select `data.txt` file and 
+- To verify that, navigate to the S3 and click on the bucket named `labs.<RANDOMNUMBER>`. Select `data.txt` file and 
 click on Download.
 - Wait for some time and refresh the page, if you do not see the data.txt file inside the S3 bucket.
 - Open the `data.txt `file and verify that the contents of the text file are in the `JSON format`.
@@ -411,7 +411,7 @@ click on Download.
 - Click on the Log groups under Logs in the Left Panel.
 - You should be able to see dynamodb logs under log groups. If it’s not visible, please wait for 5-10 minutes, 
 CloudWatch usually takes around 5-10 minutes after the creation to fetch the details.
-- Now click on  `/aws/lambda/whizlabs_dynamodb_function`.
+- Now click on  `/aws/lambda/labs_dynamodb_function`.
 - Under the log streams section, click on the stream that is present, where we can find the stream of events that were 
 triggered.
 - We can view the log events of the lambda function when some actions are taken place in dynamodb.
@@ -432,7 +432,7 @@ Architecture Diagram
 Under security groups, click on Create Security Group button.
 
 ------------------------------------------------------------------------------
-    Security group name:  Whizvpcendpoint-sg
+    Security group name:  vpcendpoint-sg
     Description: Enter Security group for VPC endpoint
     VPC: Select default VPC
 ------------------------------------------------------------------------------
@@ -459,7 +459,7 @@ Go to the endpoint screen and click on Create Endpoint button
 ------------------------------------------------------------------------------
 
 Under security group remove the default group and choose the security group we have created which is
-`Whizvpcendpoint-sg` (Policy: Choose Full Access ) and click on Create Endpoint button.
+`vpcendpoint-sg` (Policy: Choose Full Access ) and click on Create Endpoint button.
 
 `Note: Copy the endpoint of the VPC and paste in your notepad`
 
@@ -469,12 +469,12 @@ Under security group remove the default group and choose the security group we h
 Click on Create table button.
 
 ------------------------------------------------------------------------------
-    Table Name: Enter whizdbtable
+    Table Name: Enter dbtable
     Partition key: Enter id and select String
 ------------------------------------------------------------------------------
 Leave all the other settings as default and then click on Create table.
 
-Click on the items tab, then select whizdbtable and Under Actions, click on Explore table items button
+Click on the items tab, then select dbtable and Under Actions, click on Explore table items button
 
 Click on Create item and to add new attributes click on the Add New Attribute and select string each time you add an attribute.
 
@@ -519,7 +519,7 @@ Now replace the existing code with the below code.
     client = boto3.resource('dynamodb')
     
     def lambda_handler(event, context):
-        table_name = "whizdbtable"
+        table_name = "dbtable"
         table = client.Table(table_name)
         response = table.scan()
         return response['Items']
@@ -550,7 +550,7 @@ Now navigate to the Lambda source code and edit the `lambda_function.py` file, c
     
     client = boto3.resource('dynamodb')         
     def lambda_handler(event, context):
-        table_name = "whizdbtable"
+        table_name = "dbtable"
         table = client.Table(table_name)    
         try:
             student_id = event['student_id']
@@ -587,7 +587,7 @@ Now navigate to Lambda source code and edit the `lambda_function.py` file, copy 
     client = boto3.resource('dynamodb')
     
     def lambda_handler(event, context):
-        table_name = "whizdbtable"
+        table_name = "dbtable"
         table = client.Table(table_name)    
         try:
             student_id = event['student_id']
@@ -626,7 +626,7 @@ Now navigate to the Lambda source code and edit the `lambda_function.py` file, c
     client = boto3.resource('dynamodb')
     
     def lambda_handler(event, context):
-        table_name = "whizdbtable"          
+        table_name = "dbtable"          
         table = client.Table(table_name)
     
         try:
@@ -652,7 +652,7 @@ Now navigate to the Lambda source code and edit the `lambda_function.py` file, c
   - Choose Create new API as New API. Under settings,
 
 ------------------------------------------------------------------------------
-    API name: Enter  WhizlabAPI
+    API name: Enter  labAPI
     Endpoint Type: Select Private
     VPC Endpoint IDs: Paste the endpoint id we noted previously
 
@@ -660,7 +660,7 @@ Now navigate to the Lambda source code and edit the `lambda_function.py` file, c
 
 - Create 4 Resources
 
-Once the API is created, click on the Whizlab API API, followed by Actions
+Once the API is created, click on the lab API API, followed by Actions
 
 Select Create Resource in actions. (esource Name: Enter list )
 
@@ -798,7 +798,7 @@ Enter `student_id=13` in Query Strings and click on the Test button. You will se
 
 You can also check Deletion on DynamoDB
 
-Go to the DynamoDB console and click on `whizdbtable`
+Go to the DynamoDB console and click on `dbtable`
 
 Click on `Explore table items` button Refresh it to Check the Deleted Item
 
