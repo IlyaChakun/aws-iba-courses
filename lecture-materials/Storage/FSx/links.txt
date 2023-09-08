@@ -19,6 +19,18 @@ https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html
 
 
 
+ontap
+
+https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/performance.html
+
+
+zfs
+
+https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html
+
+
+
+
 pricing
 
 https://aws.amazon.com/fsx/windows/pricing/

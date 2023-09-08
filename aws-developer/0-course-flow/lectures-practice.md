@@ -23,7 +23,7 @@ Total Practices: **20**
 15. S3 (Part 2)
 16. ECS, ECR, Copilot
 17. DynamoDB, DAX
-18. Lambda, Step Functions, X-ray, API Gateway, SAM
+18. Lambda, Step Functions, X-ray, API Gateway, SAM, SWF
 19. CI/CD
 20. DDOS: WAF, Shield, GuardDuty, Personal Health
 21. Other: Athena, MSK, Active Directory, AppSync, Cloud9, Amplify, OpenSearch, AWS Org, Inspector, SES

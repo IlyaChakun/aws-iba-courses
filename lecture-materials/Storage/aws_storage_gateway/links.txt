@@ -1,0 +1,63 @@
+
+
+!!
+
+https://aws.amazon.com/blogs/storage/cloud-storage-in-minutes-with-aws-storage-gateway/
+
+
+
+
+
+https://docs.aws.amazon.com/filegateway/latest/files3/file-gateway-concepts.html
+
+
+
+https://docs.aws.amazon.com/storagegateway/latest/vgw/WhatIsStorageGateway.html
+
+
+
+https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
+
+
+https://docs.aws.amazon.com/filegateway/latest/filefsxw/file-gateway-fsx-concepts.html
+
+
+
+Cached volumes architecture
+https://docs.aws.amazon.com/storagegateway/latest/vgw/StorageGatewayConcepts.html
+
+
+
+https://docs.aws.amazon.com/storagegateway/latest/tgw/WhatIsStorageGateway.html
+
+Tape
+
+https://docs.aws.amazon.com/storagegateway/latest/tgw/StorageGatewayConcepts.html
+
+
+In the sentences you provided, "SMB" refers to the Server Message Block protocol, which is a network file sharing protocol
+that allows applications on a computer to read and write to files and to request services from server programs in a computer network.
+ In the context of your sentences, it means that the FSx File Gateway is utilizing the SMB protocol to access the Amazon FSx file share,
+ facilitating file sharing and access in a networked environment. This protocol is essential in ensuring that different systems and devices
+ can communicate and share resources efficiently over the network, including in cloud environments such as AWS.
+  It is commonly used in Windows environments and is supported by other operating systems as well.
+
+
+  File gateway:
+
+  NSF or SMB -> File Gateway -> HTTPS to S3  -> filecycle glacier
+
+
+  FSx Filegateway
+
+  SMB -> SFx File Gateway -> FSx windows File Server
+
+
+
+https://aws.amazon.com/storagegateway/vtl/?nc=sn&loc=2&dn=3
+
+
+
+
+Finalies
+
