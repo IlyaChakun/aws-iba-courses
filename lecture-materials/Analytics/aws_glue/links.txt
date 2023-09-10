@@ -1,2 +1,23 @@
 https://docs.aws.amazon.com/glue/latest/dg/components-key-concepts.html
 
+
+https://hevodata.com/learn/working-with-aws-glue-data-catalog/
+
+https://hevodata.com/learn/aws-glue-tutorial/
+
+
+https://aws.amazon.com/blogs/big-data/process-data-with-varying-data-ingestion-frequencies-using-aws-glue-job-bookmarks/
+
+
+https://www.cloudthat.com/resources/blog/integrate-data-across-multiple-sources-with-aws-glue-elastic-views
+
+
+
+https://docs.aws.amazon.com/databrew/latest/dg/what-is.html
+
+
+https://aws.amazon.com/blogs/aws/new-serverless-streaming-etl-with-aws-glue/
+
+
+https://docs.aws.amazon.com/glue/latest/ug/what-is-glue-studio.html
+

@@ -1,0 +1,7 @@
+https://docs.aws.amazon.com/lake-formation/latest/dg/storage-permissions.html
+
+
+https://docs.aws.amazon.com/lake-formation/latest/dg/how-it-works-terminology.html
+
+
+https://docs.aws.amazon.com/lake-formation/latest/dg/how-it-works.html
