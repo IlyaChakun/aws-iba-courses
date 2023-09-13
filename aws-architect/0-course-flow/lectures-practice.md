@@ -1,7 +1,7 @@
-16 lectures
+18 lectures
 16 practise
 
-# Lectures (21)
+# Lectures (23)
 
 1. Refresher: IAM refresher, Ec2 refresher + new AWS SSO, CloudShell, AWS ORG, STS, AWS Artifact
 2. Refresher: EBS, EFS, Instance store refresher, ELB, TG, ASG
