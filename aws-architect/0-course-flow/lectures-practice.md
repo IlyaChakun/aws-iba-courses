@@ -4,26 +4,46 @@
 # Lectures (23)
 
 1. Refresher: IAM refresher, Ec2 refresher + new AWS SSO, CloudShell, AWS ORG, STS, AWS Artifact
+
 2. Refresher: EBS, EFS, Instance store refresher, ELB, TG, ASG
-3. Refresher: Sqs, SNS, NEW Active MQ 
+
+3. Refresher: Sqs, SNS, NEW Active MQ
+
 4. Refresher: S3 Refresher
+
 5. Refresher: CloudFront, Global Accelerator, Route53, ACM
+
 6. Refresher: Database Refresher: RDS, Aurora. Cache: ElastiCache
+
 7. Refresher: ECS, Ecr, EKS, Copilot, Cloudformation
+
 8. Refresher: Dynamodb, Lambda, Api Gateway, SAM
+
 9. Refresher + new VPC 1
+
 10. Refresher + new VPC 2: Transit Gateway, Site to Site VPN, Direct Connect
+
 11. New + Refresher: System Manager, Config, CloudWatch, CloudTrail, EventBridge
+
 12. New: IAM Advanced: Control Tower, AD, AWS Organizations, Cognito, IAM Policies
+
 13. New Data Storage & Data Migration: AWS Snow Family, FSx, Storage Gateway, AWS transfer Family, DataSync
+
 14. New Databases: DocumentDB, Neptune, Keyspaces, QLDB, TimeStream, All Databases Comparison & use cases
+
 15. New: Data & Analytics: Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
+
 16. New: ML + Security: GuardDuty, Inspector, Macie, FirewallManager, Trusted Advisor, amazon detective
-17. New: Security: KMS, CloudHsm, Shield, Waf, Secret Manager, SSM Parameter Store, 
+
+17. New: Security: KMS, CloudHsm, Shield, Waf, Secret Manager, SSM Parameter Store,
+
 18. New: Disaster Recovery & Migration: DMS, AWS Backup, MGN, VMware
+
 19. New: Other services + Cost Calculations: SES, Pinpoint, Elastic Transcoder, AWS Batch, AppFlow, Amplify, AWS Budget,
     AWS Cost Explorer. How calculate price of your AWS solution?
+
 20. New: Architecture Presentation and Discussion: Message Driven vs Event Driven, HPC, Caching Strategies in AWS
+
 21. New: Architecture Presentation and Discussion: CloudNative vs Cloud Agnostic, Serverless architectures, Disaster
     Recovery Architectures
 
