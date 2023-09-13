@@ -5,10 +5,10 @@
 
 1. Refresher: IAM refresher, Ec2 refresher + new AWS SSO, CloudShell, AWS ORG, STS, AWS Artifact
 2. Refresher: EBS, EFS, Instance store refresher, ELB, TG, ASG
-3. Refresher: Database Refresher: RDS, Aurora. Cache: ElastiCache
+3. Refresher: Sqs, SNS, NEW Active MQ 
 4. Refresher: S3 Refresher
 5. Refresher: CloudFront, Global Accelerator, Route53, ACM
-6. Refresher: Sqs, SNS, NEW Active MQ
+6. Refresher: Database Refresher: RDS, Aurora. Cache: ElastiCache
 7. Refresher: ECS, Ecr, EKS, Copilot, Cloudformation
 8. Refresher: Dynamodb, Lambda, Api Gateway, SAM
 9. Refresher + new VPC 1
