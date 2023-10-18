@@ -413,7 +413,7 @@ consists of the created Kinesis Data Stream name.
         "flows": [
             {
             "filePattern": "/var/log/httpd/access_log",
-            "kinesisStream": "whiz-data-stream",
+            "kinesisStream": "data-stream",
             "partitionKeyOption": "RANDOM"
             }
         ]
