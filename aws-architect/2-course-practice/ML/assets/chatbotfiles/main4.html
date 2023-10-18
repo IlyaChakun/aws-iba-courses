@@ -1,0 +1,19 @@
+<button type="button" class="btn open-button btn-circle btn-md"  style="background-color:#FF9900; color:#000000; visibility: visible;"  onclick="openForm()">
+     <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-chat-left-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+         <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+         <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+         </svg>
+     </button> 
+    
+     <div class="chat-popup" id="myForm">
+
+         <form id="chatform" class="form-container">
+             <div id="conversation" style="max-width: 300px; padding: 10px; height: 350px; border: 1px solid #ccc; background-color: #eee; padding: 4px; overflow: scroll"></div>
+             <br>
+             <input type="text" id="wisdom" size="80" value="" style="max-width: 280px; padding: 10px;"" placeholder="I want a drink...">
+             <br><br>
+             <button type="submit" class="btn" onclick= "return pushChat();">Send</button>
+             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+         </form>
+ 
+     </div>
