@@ -858,3 +858,99 @@ Goal: create an application to save products
 ## SAM deployment of sample app
 
 [instructions](../../../aws-developer/3-practice-helper/sam/SAM.md)
+
+## Architect Task
+
+### **Serverless E-commerce Architecture Project**
+
+**Domain: E-Commerce**
+
+- **Key Components:**
+  - Products
+  - Orders
+  - Users
+  - Notification System
+
+**Functional Requirements:**
+
+1. **Order Management:**
+
+- **Create Order:** Orders created by users should be saved to the 'Orders' table in DynamoDB.
+- **SQS for Supplier:** After order was added to Table it must be Added to SQS for further processing.
+
+2. **Product Management:**
+
+- **Product Upload:** Products are added via a CSV file uploaded to an S3 bucket.
+
+- **Data Processing:** This upload triggers a Lambda function (Python) which processes and saves data to the 'Products'
+  table in DynamoDB.
+
+3. **API Interface:**
+
+- Utilize API Gateway to manage all endpoints, providing a secure, scalable way to connect clients to backend services.
+
+4. **Backend Processing:**
+
+- Develop backend functions using AWS Lambda (Python) for various serverless operations.
+
+5. **Monitoring and Tracing:**
+
+- Implement AWS X-Ray for monitoring and tracing the application's performance and troubleshooting issues.
+
+6. **DynamoDB Streams:**
+
+- **Order Notifications for all stakeholders:** Set up DynamoDB Streams on the 'Orders' table. When a new order is inserted, a Lambda
+  function is triggered. This lambda must create a email and send it to SNS.
+
+7. **Advanced Feature:**
+
+- **Data Encryption & Decryption:** Files uploaded to S3 are encrypted using an S3 key. A Lambda function should decrypt
+  these files upon processing.
+
+### Products data format:
+```csv
+ProductID, ProductName, Price, Category
+1001, "Ultra HD Smart TV", 1200, "Electronics"
+1002, "Running Shoes", 85, "Footwear"
+1003, "Bluetooth Headphones", 250, "Electronics"
+1004, "Leather Wallet", 50, "Accessories"
+```
+
+### APIs
+
+#### **Orders**
+1. **Create Order**
+  - **Method:** POST
+  - **Endpoint:** `/orders`
+  - **Description:** Creates a new order. Requires order details in the request body.
+
+2. **Get Order**
+  - **Method:** GET
+  - **Endpoint:** `/orders/{orderId}`
+  - **Description:** Retrieves details of a specific order by `orderId`.
+
+3. **List Orders**
+  - **Method:** GET
+  - **Endpoint:** `/orders`
+  - **Description:** Retrieves a list of all orders.
+
+#### **Users**
+1. **Register User**
+  - **Method:** POST
+  - **Endpoint:** `/users`
+  - **Description:** Registers a new user. Requires user details in the request body.
+
+2. **Get User**
+  - **Method:** GET
+  - **Endpoint:** `/users/{userId}`
+  - **Description:** Retrieves details of a specific user by `userId`.
+
+3. **Update User**
+  - **Method:** PUT
+  - **Endpoint:** `/users/{userId}`
+  - **Description:** Updates user details for a given `userId`. Requires updated user details in the request body.
+
+4. **Delete User**
+  - **Method:** DELETE
+  - **Endpoint:** `/users/{userId}`
+  - **Description:** Deletes a specific user by `userId`.

@@ -1,118 +1,109 @@
-18 lectures
-16 practise
+# AWS Architect Certification Course Outline
 
-# Lectures (23)
+## Course Duration: 10 Weeks
 
-1. Refresher: IAM refresher, Ec2 refresher + new AWS SSO, CloudShell, AWS ORG, STS, AWS Artifact
+### Lectures (11)
 
-2. Refresher: EBS, EFS, Instance store refresher, ELB, TG, ASG
+1. **IAM + EC2 Basics:**
+   - IAM refresher, Control Tower, AD, AWS Organizations
+   - Ec2 (Instance types, Launch Template, EBS, EFS, Instance store)
+   - ELB, TG, ASG
+   - CloudNative vs Cloud Agnostic
 
-3. Refresher: Sqs, SNS, NEW Active MQ
+2. **EC2 Basics & Blob Storage:**
+   - AWS Nitro System, AWS Graviton Processors, HCP
+   - S3, CloudFront, Global Accelerator, Route53, ACM
 
-4. Refresher: S3 Refresher
+3. **Databases & Caches:**
+   - RDS, Aurora, ElastiCache, DocumentDB, Neptune, Keyspaces
+   - QLDB, TimeStream, All Databases Comparison & use cases
+   - Caching Strategies in AWS
 
-5. Refresher: CloudFront, Global Accelerator, Route53, ACM
+4. **VPC:**
+   - OSI, Network Protocols, Security Groups
+   - Transit Gateway, Site to Site VPN, Direct Connect, Gateway Load Balancer
+   - Network Design Architectures
 
-6. Refresher: Database Refresher: RDS, Aurora. Cache: ElastiCache
+5. **Containerization & Serverless:**
+   - ECS, ECR, EKS, Copilot, DynamoDB, Lambda, Step Functions, SWF
+   - API Gateway, SAM, ESC Deployment Architectures Presentation
+   - Serverless Deployment Designs
+   - AWS AppSync
 
-7. Refresher: ECS, Ecr, EKS, Copilot, Cloudformation
+6. **Data Storage & Data Migration and Transfer:**
+   - AWS Snow Family, FSx, Storage Gateway, AWS Transfer Family, DataSync
+   - Data Migration Architectures
 
-8. Refresher: Dynamodb, Lambda, Api Gateway, SAM
+7. **Automation in Cloud & Cloud OPS:**
+   - System Manager, Config, EventBridge, AWS X-ray, CloudWatch, CloudTrail
+   - Amazon Managed Grafana, AWS Inspector, AWS GuardDuty, Trusted Advisor
+   - Amazon Managed Service for Prometheus
+   - aws personal health dashboard
+   - AWS Resource Access Manager
+   - From Monolith to Distributed System Deployment Design
 
-9. Refresher + new VPC 1
+8. **Data & Analytics:**
+   - Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
+   - Data Analytics System Design
+   - aws elastic transcoder
 
-10. Refresher + new VPC 2: Transit Gateway, Site to Site VPN, Direct Connect
+9. **Security:**
+   - AWS WAF, AWS Shield, Firewall Manager, AWS Security Hub, Macie, Amazon Detective
+   - KMS, CloudHSM, Secret Manager, SSM Parameter Store
+   - Security Best Practice
+   - AWS License Manager
 
-11. New + Refresher: System Manager, Config, CloudWatch, CloudTrail, EventBridge
+10. **Disaster Recovery & Migration:**
+   - DMS, AWS Backup, MGN, VMware
+   - Disaster Recovery Architectures
 
-12. New: IAM Advanced: Control Tower, AD, AWS Organizations, Cognito, IAM Policies
+11. **Distributed Systems & SaaS:**
+   - Message Driven vs Event Driven, Kafka, SQS, EventBridge, Active MQ, AWS Batch, AppFlow
+   - Distributed System Design, SaaS Design
 
-13. New Data Storage & Data Migration: AWS Snow Family, FSx, Storage Gateway, AWS transfer Family, DataSync
+### Self Learning
 
-14. New Databases: DocumentDB, Neptune, Keyspaces, QLDB, TimeStream, All Databases Comparison & use cases
+- Cost Calculations (AWS Budget, AWS Cost Explorer)
+- Other Services (SES, Pinpoint, Elastic Transcoder, Amplify)
+- ML Services (Rekognition, Transcribe, Polly, Translate, Lex, Connect, Comprehend, SageMaker, Forecast, Kendra, Personalize, Textract)
+- AWS AD, STS, Cognito, AWS SSO, CloudShell, CloudFormation, CDK, SDK, AWS Cloud9
+- CI/CD on AWS (CodePipeline, CodeBuild, CodeCommit, CodeDeploy, CodeStar, CodeArtifact)
+- AWS Artifact, Personal Health
+- AWS Proton
 
-15. New: Data & Analytics: Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
+### Practice (9)
 
-16. New: ML + Security: GuardDuty, Inspector, Macie, FirewallManager, Trusted Advisor, amazon detective
+1. **Cloud Deployment:**
+   - EFS, EC2, ALB, TG, Global Accelerator
+   - Create a deployment for 2 ALBs with TG, EC2 instances in different regions using Global Accelerator
 
-17. New: Security: KMS, CloudHsm, Shield, Waf, Secret Manager, SSM Parameter Store,
+2. **Blob Storage & CDN:**
+   - S3 + Cloudfront, Lambda@Edge, CloudFront Lambda
+   - Understanding CloudFront Origin Groups and Lambda@Edge
+   - Setup lifecycle policy for S3 bucket files
 
-18. New: Disaster Recovery & Migration: DMS, AWS Backup, MGN, VMware
+3. **Serverless Architecture:**
+   - DynamoDB, DynamoDB Streams, API Gateway, Lambda, SNS, SQS, X-ray
+   - Serverless E-commerce Architecture Project
 
-19. New: Other services + Cost Calculations: SES, Pinpoint, Elastic Transcoder, AWS Batch, AppFlow, Amplify, AWS Budget,
-    AWS Cost Explorer. How calculate price of your AWS solution?
+4. **Automation in Cloud:**
+   - SQS, SNS, CloudWatch, RDS, System Manager, Config
+   - Use AWS Systems Manager & Resource Group for Apache on EC2
+   - Check Security group compliance using AWS Config
 
-20. New: Architecture Presentation and Discussion: Message Driven vs Event Driven, HPC, Caching Strategies in AWS
+5. **Containerization Deployment:**
+   - ECS Deployment (EC2 and Fargate)
+   - Add Target Scaling Policy, Update deployment with VPC Endpoints
 
-21. New: Architecture Presentation and Discussion: CloudNative vs Cloud Agnostic, Serverless architectures, Disaster
-    Recovery Architectures
+6. **Network Practice:**
+   - VPC Private Link, Transit Gateway VPC Setup, Pair VPCs with CIDR block conflict
 
-# Practice (11)
+7. **Security:**
+   - Use Amazon Macie for S3 data, Implement WAF and Route53
+   - Encrypt S3 bucket with AWS KMS, Monitor with CloudTrail
 
-1. Refresher: EFS, EC2, ALB, TG, Global Accelerator, EKS
-   * Mount Elastic File System (EFS) on EC2
-   * Deploy sample webserver using ALB, Target Group, Ec2 (from developer)
-   * Create and run Amazon EKS Cluster using Spot instance
-   * Create Deployment for 2 albs with ec2 instances behind in different regions and make it available using Global Accelerator
+8. **Data & Analytics:**
+   - Kinesis, Glue + S3 (ETL)
+   - Real
 
-2. Refresher: EBS, CloudWatch, SNS, Step Functions, DMS, RDS
-  * Automating EBS Snapshot Creation Using CloudWatch and SNS
-  * Creating a Serverless Workflow with AWS Step Functions
-  * Migration of Database using DMS
-  * RDS Multi-AZ + failover In custom VPC + Cloudwatch insights (from developer)
-
-3. Refresher: S3 + Cloudfront, Labmda@Edge, CloudFront lambda
-  * Understanding CloudFront Origin Groups( from developer)
-  * Understanding Lambda@Edge (from developer)
-  * Deploy a static website using S3
-  * Setup lifecycle policy for s3 bucket files
-  * Discuss Storage Classes
-
-4. SQS SNS, CloudWatch, Rds, System Manager, Config
-   * Building a Resilient AWS Architecture to withstand hardware failovers and get notified using SNS
-   * Use AWS Systems Manager document & Resource Group to install Apache on EC2 Instance
-   * Check the Compliance status of Security group using AWS Config
-
-5. Refresher: ECS Deployment with Fargate, with Ec2, Autoscaling using Target Scaling Policies
-  * Deploy web application using ECS Based on Ec2 (from developer)
-  * Deploy web application using ECS Based on Fargate (from developer)
-  * Add Target Scaling Policy for ECS Cluster above
-  * Deploy ECS using Cloudformation
-
-6. Refresher: VPC 1
-7. VPC 2
-
-8. Security
-  * Discover sensitive data present in S3 bucket using Amazon Macie
-  * ECS + ECR + ALB + **WAF** + ROUTE53 (from developer)
-  * How to Encrypt an S3 bucket using AWS KMS and monitor the activities with CloudTrail
-  * Find vulnerabilities on EC2 instance using Amazon Inspector
-  * Check AWS Resources in Trusted Advisor
-
-
-9. Data & Analytics: Kinesis,Glue + S3 (ETL) 
-  * Build a real time data streaming system with Amazon Kinesis Data Streams
-  * Build a real time data streaming system with Amazon Kinesis Data Stream and Kinesis Agent
-  * Perform ETL operation in Glue with S3
-  * EMR 
-
-
-10. Dynamodb, Dynamodb streams, dynamodb indexes Api Gateway, Lambda, SNS, SQS
-    * Configuring DynamoDB Streams Using Lambda
-    * Implementing Amazon DynamoDB operations through Amazon Private REST API Gateway Level
-    * Export Data from DynamoDB to S3 as JSON File
-    * Build API Gateway with different stages using stage variables
-
-11. ML
-  * Building a Food Ordering Chatbot Website 
-  * Amazon Rekognition using AWS Lambda
-  * ML aws services refresher
-
-12. System Design Tasks
-13. Practice tests
-14. Practice tests
-
-
-
-
-
+9. **System Design and practical tests**
