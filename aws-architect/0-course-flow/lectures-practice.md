@@ -11,7 +11,10 @@
    - CloudNative vs Cloud Agnostic
 
 2. **EC2 Basics & Blob Storage:**
-   - AWS Nitro System, AWS Graviton Processors, HCP
+   - AWS Nitro System
+   - AWS Graviton Processors
+   - AWS HCP
+   - Beanstalk
    - S3, CloudFront, Global Accelerator, Route53, ACM
 
 3. **Databases & Caches:**
@@ -27,12 +30,14 @@
 5. **Containerization & Serverless:**
    - ECS, ECR, EKS, Copilot, DynamoDB, Lambda, Step Functions, SWF
    - API Gateway, SAM, ESC Deployment Architectures Presentation
-   - Serverless Deployment Designs
    - AWS AppSync
+   - Serverless Deployment Designs
 
-6. **Data Storage & Data Migration and Transfer:**
-   - AWS Snow Family, FSx, Storage Gateway, AWS Transfer Family, DataSync
-   - Data Migration Architectures
+6. **Distributed Systems & SaaS:**
+   - Message Driven vs Event Driven
+   - Kafka, SQS, EventBridge, Active MQ, AWS Batch, AppFlow
+   - Distributed System Design
+   - SaaS Design
 
 7. **Automation in Cloud & Cloud OPS:**
    - System Manager, Config, EventBridge, AWS X-ray, CloudWatch, CloudTrail
@@ -42,24 +47,24 @@
    - AWS Resource Access Manager
    - From Monolith to Distributed System Deployment Design
 
-8. **Data & Analytics:**
-   - Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
-   - Data Analytics System Design
-   - aws elastic transcoder
+8. **Disaster Recovery & Migration:**
+   - DMS, AWS Backup, MGN, VMware
+   - Disaster Recovery Architecture
 
 9. **Security:**
    - AWS WAF, AWS Shield, Firewall Manager, AWS Security Hub, Macie, Amazon Detective
    - KMS, CloudHSM, Secret Manager, SSM Parameter Store
-   - Security Best Practice
    - AWS License Manager
+   - Security Best Practice
 
-10. **Disaster Recovery & Migration:**
-   - DMS, AWS Backup, MGN, VMware
-   - Disaster Recovery Architectures
+10. **Data & Analytics:**
+   - Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
+   - aws elastic transcoder
+   - Data Analytics System Designs
 
-11. **Distributed Systems & SaaS:**
-   - Message Driven vs Event Driven, Kafka, SQS, EventBridge, Active MQ, AWS Batch, AppFlow
-   - Distributed System Design, SaaS Design
+11. **Data Storage & Data Migration and Transfer:**
+   - AWS Snow Family, FSx, Storage Gateway, AWS Transfer Family, DataSync
+   - Data Migration Architectures
 
 ### Self Learning
 
