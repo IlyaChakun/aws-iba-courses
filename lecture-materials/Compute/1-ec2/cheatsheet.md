@@ -237,27 +237,10 @@ Physical server with direct access to the processor and memory of the underlying
 
 Add GPU-powered inference acceleration to EC2 instances; cost-effective deep learning inference.
 
-## EC2 Global Infrastructure
-
-Regions and Availability Zones; choose based on compliance, data sovereignty, latency.
-
 ## Amazon EC2 Auto Recovery
 
 Automatic recovery feature for instances; recover from instance failures.
 
-## Network Performance of EC2 Instances
-
-Different levels of network performance based on instance types; impacts application performance.
-
 ## Amazon EC2 Spot Fleet
 
 Manage thousands of Spot Instances; simple and cost-effective way to manage a fleet of instances.
-
-## Amazon EC2 Transit Gateway
-
-Simplify network architecture; easily scale VPC and account connections.
-
-## Instance Generation
-
-Understand differences between current and previous generation instances; based on use case and performance
-requirements.

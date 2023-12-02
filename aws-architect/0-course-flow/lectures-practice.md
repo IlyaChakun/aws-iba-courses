@@ -2,7 +2,7 @@
 
 ## Course Duration: 10 Weeks
 
-### Lectures (11)
+### Lectures (10)
 
 1. **IAM + EC2 Basics:**
    - IAM refresher, Control Tower, AD, AWS Organizations
@@ -10,21 +10,22 @@
    - ELB, TG, ASG
    - CloudNative vs Cloud Agnostic
 
-2. **EC2 Basics & Blob Storage:**
+2. **EC2 Advanced & Blob Storage:**
+   - Beanstalk
+   - S3, CloudFront, Global Accelerator, Route53, ACM
    - AWS Nitro System
    - AWS Graviton Processors
    - AWS HCP
-   - Beanstalk
-   - S3, CloudFront, Global Accelerator, Route53, ACM
 
 3. **Databases & Caches:**
-   - RDS, Aurora, ElastiCache, DocumentDB, Neptune, Keyspaces
-   - QLDB, TimeStream, All Databases Comparison & use cases
+   - RDS, Aurora, ElastiCache, DocumentDB, Neptune, Keyspaces, QLDB, TimeStream
+   - All Databases Comparison & use cases
    - Caching Strategies in AWS
 
 4. **VPC:**
    - OSI, Network Protocols, Security Groups
    - Transit Gateway, Site to Site VPN, Direct Connect, Gateway Load Balancer
+   - EFA vs ENA
    - Network Design Architectures
 
 5. **Containerization & Serverless:**
@@ -43,13 +44,14 @@
    - System Manager, Config, EventBridge, AWS X-ray, CloudWatch, CloudTrail
    - Amazon Managed Grafana, AWS Inspector, AWS GuardDuty, Trusted Advisor
    - Amazon Managed Service for Prometheus
-   - aws personal health dashboard
+   - AWS personal health dashboard
    - AWS Resource Access Manager
    - From Monolith to Distributed System Deployment Design
 
 8. **Disaster Recovery & Migration:**
    - DMS, AWS Backup, MGN, VMware
    - Disaster Recovery Architecture
+   - Migration to AWS Architectures
 
 9. **Security:**
    - AWS WAF, AWS Shield, Firewall Manager, AWS Security Hub, Macie, Amazon Detective
@@ -57,12 +59,10 @@
    - AWS License Manager
    - Security Best Practice
 
-10. **Data & Analytics:**
+10. **Data & Analytics : Data Storage & Data Migration and Transfer:**
    - Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
-   - aws elastic transcoder
+   - AWS elastic transcoder
    - Data Analytics System Designs
-
-11. **Data Storage & Data Migration and Transfer:**
    - AWS Snow Family, FSx, Storage Gateway, AWS Transfer Family, DataSync
    - Data Migration Architectures
 
@@ -76,39 +76,54 @@
 - AWS Artifact, Personal Health
 - AWS Proton
 
-### Practice (9)
+### Practice (10)
 
-1. **Cloud Deployment:**
-   - EFS, EC2, ALB, TG, Global Accelerator
-   - Create a deployment for 2 ALBs with TG, EC2 instances in different regions using Global Accelerator
+1. **Basic Cloud Deployments:**
+   - EFS, EC2, ALB, TG, Global Accelerator, Route53
+      - Create a deployment for 2 ALBs with TG, EC2 instances in different regions using Global Accelerator
+      - Add route53 record and test via dns
+   - Create a Spot Fleet based on custom AMI with prebuild webserver with webapp
+      - httpd
+   - Practical test questions
 
 2. **Blob Storage & CDN:**
+   - Introduction to Amazon CloudFront
+   - Understanding CloudFront Origin Groups
    - S3 + Cloudfront, Lambda@Edge, CloudFront Lambda
-   - Understanding CloudFront Origin Groups and Lambda@Edge
-   - Setup lifecycle policy for S3 bucket files
+   - Practical test questions
 
 3. **Serverless Architecture:**
-   - DynamoDB, DynamoDB Streams, API Gateway, Lambda, SNS, SQS, X-ray
    - Serverless E-commerce Architecture Project
+      - DynamoDB, DynamoDB Streams, API Gateway, Lambda, SNS, SQS, X-ray
+   - AWS Step Function, Api Gateway, Lambda
+      - Define domain model
+      - Create a Target Architecture
+      - Implement Simple Lambdas just to emulate process
+      - Implement Step Function Execution through API Gateway
 
-4. **Automation in Cloud:**
-   - SQS, SNS, CloudWatch, RDS, System Manager, Config
-   - Use AWS Systems Manager & Resource Group for Apache on EC2
-   - Check Security group compliance using AWS Config
+4. **Network Practice:**
+   - VPC Private Link, Transit Gateway VPC Setup, Pair VPCs with CIDR block conflict
 
 5. **Containerization Deployment:**
    - ECS Deployment (EC2 and Fargate)
    - Add Target Scaling Policy, Update deployment with VPC Endpoints
 
-6. **Network Practice:**
-   - VPC Private Link, Transit Gateway VPC Setup, Pair VPCs with CIDR block conflict
+6. **Distributed Systems & SaaS**
+   - Create a system design for distributed system
+   - Practical tests
 
-7. **Security:**
+7. **Automation in Cloud:**
+   - SQS, SNS, CloudWatch, RDS, System Manager, Config
+   - Use AWS Systems Manager & Resource Group for Apache on EC2
+   - Check Security group compliance using AWS Config
+
+8. **Disaster Recovery & Migration:**
+   - System Design: Create a disaster recovery plan for particular design 
+   - Practical tests
+
+9. **Security:**
    - Use Amazon Macie for S3 data, Implement WAF and Route53
    - Encrypt S3 bucket with AWS KMS, Monitor with CloudTrail
 
-8. **Data & Analytics:**
-   - Kinesis, Glue + S3 (ETL)
-   - Real
-
-9. **System Design and practical tests**
+10. **Data & Analytics:**
+    - Kinesis, Glue + S3 (ETL)
