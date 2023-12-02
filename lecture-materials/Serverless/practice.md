@@ -857,7 +857,7 @@ Goal: create an application to save products
 
 ## SAM deployment of sample app
 
-[instructions](../../../aws-developer/3-practice-helper/sam/SAM.md)
+[instructions](../../aws-developer/3-practice-helper/sam/SAM.md)
 
 ## Architect Task
 
