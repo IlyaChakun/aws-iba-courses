@@ -10,7 +10,8 @@ Total Practices: **20**
 2. EBS, EFS, Instance Store
 3. ELB, TG, ASG, Beanstalk
 4. SQS, SNS, IaC (CloudFormation, CDK, SDK)
-5. CloudWatch, CloudTrail, EventBridge, System Manager, AWS Config
+5. Cloud OPS: CloudWatch, CloudTrail, EventBridge, System Manager, AWS Config, Amazon Managed Grafana, AWS Inspector,
+   AWS GuardDuty, Trusted Advisor, AWS personal health dashboard, AWS Resource Access Manager
 6. VPC (Part 1)
 7. VPC (Part 2)
 8. Route53 and ASM, Kinesis
