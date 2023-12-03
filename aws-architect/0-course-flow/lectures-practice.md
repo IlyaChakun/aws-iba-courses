@@ -5,31 +5,39 @@
 ### Lectures (10)
 
 1. **IAM + EC2 Basics:**
-   - IAM refresher, Control Tower, AD, AWS Organizations
-   - Ec2 (Instance types, Launch Template, EBS, EFS, Instance store)
+   - Acquaintance
+   - Introduction
+   - IAM refresher, STS, Control Tower, AD, AWS Organizations, 
+   - Ec2 (Instance types, Launch Template)
+   - EBS, EFS, Instance store
    - ELB, TG, ASG
    - CloudNative vs Cloud Agnostic
 
-2. **EC2 Advanced & Blob Storage:**
-   - Beanstalk
-   - S3, CloudFront, Global Accelerator, Route53, ACM
+2. **EC2 Advanced & Blob Storage & CDN:**
    - AWS Nitro System
    - AWS Graviton Processors
    - AWS HCP
+   - Beanstalk
+   - S3
+   - CloudFront, Global Accelerator
 
 3. **Databases & Caches:**
    - RDS, Aurora, ElastiCache, DocumentDB, Neptune, Keyspaces, QLDB, TimeStream
+   - DynamoDB, Dax
    - All Databases Comparison & use cases
-   - Caching Strategies in AWS
+   - How to define System Requirements? CAP Theorem
 
 4. **VPC:**
    - OSI, Network Protocols, Security Groups
+   - Route53
+   - ACM
    - Transit Gateway, Site to Site VPN, Direct Connect, Gateway Load Balancer
    - EFA vs ENA
    - Network Design Architectures
 
 5. **Containerization & Serverless:**
-   - ECS, ECR, EKS, Copilot, DynamoDB, Lambda, Step Functions, SWF
+   - ECS, ECR, EKS, Copilot
+   - Lambda, Step Functions, SWF
    - API Gateway, SAM, ESC Deployment Architectures Presentation
    - AWS AppSync
    - Serverless Deployment Designs
