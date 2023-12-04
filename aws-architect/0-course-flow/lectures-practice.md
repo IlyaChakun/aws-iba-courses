@@ -6,7 +6,6 @@
 
 1. **IAM + EC2 Basics:**
    - Acquaintance
-   - Introduction
    - IAM refresher, STS, Control Tower, AD, AWS Organizations, 
    - Ec2 (Instance types, Launch Template)
    - EBS, EFS, Instance store
@@ -16,7 +15,6 @@
 2. **EC2 Advanced & Blob Storage & CDN:**
    - AWS Nitro System
    - AWS Graviton Processors
-   - AWS HCP
    - Beanstalk
    - S3
    - CloudFront, Global Accelerator
