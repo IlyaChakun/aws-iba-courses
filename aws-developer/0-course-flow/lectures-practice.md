@@ -39,10 +39,7 @@ Total Practices: **20**
     * Setup webserver on EC2 using Userdata and attach EIP
     * Create an EC2 Server and Test Access for S3
     * Create and Configure Amazon EC2 Auto Scaling with Launch Templates
-    * Spot Fleet based on AMI
-    * Placement Group
-    * EC2: Dedicated Instance vs Dedicated Host
-    * EC2: Instance Lifecycle
+    * EC2: Dedicated Instance vs Dedicated Host vs Bare metal EC2
    
 2. EBS, EFS, Instance Store
     * EBS and EC2: Resizing Amazon EBS Volume

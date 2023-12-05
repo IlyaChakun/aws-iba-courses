@@ -23,7 +23,6 @@
    - RDS, Aurora, ElastiCache, DocumentDB, Neptune, Keyspaces, QLDB, TimeStream
    - DynamoDB, Dax
    - All Databases Comparison & use cases
-   - How to define System Requirements? CAP Theorem
 
 4. **VPC:**
    - OSI, Network Protocols, Security Groups
