@@ -86,9 +86,11 @@
 1. **Basic Cloud Deployments:**
    - EFS, EC2, ALB, TG, Global Accelerator, Route53
       - Create a deployment for 2 ALBs with TG, EC2 instances in different regions using Global Accelerator
-      - Add route53 record and test via dns
+      - You can test via IP address from Global Accelerator or Add route53 record and test via dns
+      - Show the failover case (when one of the region went down)
+      - Draw Deployment Schema
    - Create a Spot Fleet based on custom AMI with prebuild webserver with webapp
-      - httpd
+      - httpd webserver with simple html page in userdata
    - Practical test questions
 
 2. **Blob Storage & CDN:**

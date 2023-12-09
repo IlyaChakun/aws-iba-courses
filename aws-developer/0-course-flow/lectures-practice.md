@@ -39,13 +39,12 @@ Total Practices: **20**
     * Setup webserver on EC2 using Userdata and attach EIP
     * Create an EC2 Server and Test Access for S3
     * Create and Configure Amazon EC2 Auto Scaling with Launch Templates
-    * EC2: Dedicated Instance vs Dedicated Host vs Bare metal EC2
+    * EC2: Dedicated Instance vs Dedicated Host EC2
    
 2. EBS, EFS, Instance Store
     * EBS and EC2: Resizing Amazon EBS Volume
     * EFS and EC2: Mount Elastic File System (EFS) on EC2
     * EBS and EC2: Termination protection
-    * Instance store: Create EC2 with instance store
     * EFS: Performance Modes
     * EBS: How to encrypt unencrypted snapshot?
     * Instance Store: Describe usage pattern
