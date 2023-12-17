@@ -259,17 +259,18 @@ In this task, we will upload the objects in the S3 bucket and make them public.
 
 ```
 import json
-
+ 
 def lambda_handler(event, context):
     request = event['Records'][0]['cf']['request']
     headers = request['headers']
-
-    if request['uri'] == '/site/admin' or request['uri'] == '/site/admin/':
-        # Not an A/B Test
-        request['uri'] = '/admin.html'
+ 
+    if request['uri'] == '/index':
+        request['uri'] = '/index.html'
+        return request
+    elif request['uri'] == '/pavel':
+        request['uri'] = '/pavel.html'
         return request
     else:
-        request['uri'] = '/user.html'
         return request
 ```
 

@@ -102,11 +102,14 @@
 3. **Serverless Architecture:**
    - Serverless E-commerce Architecture Project
       - DynamoDB, DynamoDB Streams, API Gateway, Lambda, SNS, SQS, X-ray
-   - AWS Step Function, Api Gateway, Lambda
-      - Define domain model
-      - Create a Target Architecture
-      - Implement Simple Lambdas just to emulate process
-      - Implement Step Function Execution through API Gateway
+      - Additional: 
+        - Security (WAF, SQS Protection)
+        - Rate Limiting (WAF)
+        - OPS (which metrics are you interesting in?)
+        - How would you implement disaster recovery?
+        - Deployment Automation (How would you deploy your solution in automated manner?)
+        - Caching (Improve your solution by introducing caching. Try to introduce cache solution for each level, where possible)
+   - Practical test questions
 
 4. **Network Practice:**
    - VPC Private Link, Transit Gateway VPC Setup, Pair VPCs with CIDR block conflict
