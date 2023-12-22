@@ -109,6 +109,7 @@
         - How would you implement disaster recovery?
         - Deployment Automation (How would you deploy your solution in automated manner?)
         - Caching (Improve your solution by introducing caching. Try to introduce cache solution for each level, where possible)
+        - Cost reduction for S3 
    - Practical test questions
 
 4. **Network Practice:**
