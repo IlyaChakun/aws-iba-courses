@@ -26,49 +26,61 @@
 
 4. **VPC:**
    - OSI, Network Protocols, Security Groups
-   - Route53
+   - Route53, DNSSEK
    - ACM
-   - Transit Gateway, Site to Site VPN, Direct Connect, Gateway Load Balancer
+   - Transit Gateway, Site to Site VPN, Direct Connect
+   - Gateway Load Balancer
+   - DHCP
    - EFA vs ENA
    - Network Design Architectures
 
 5. **Containerization & Serverless:**
-   - ECS, ECR, EKS, Copilot
+   - ECS, ECR
+   - EKS, Copilot
    - Lambda, Step Functions, SWF
-   - API Gateway, SAM, ESC Deployment Architectures Presentation
+   - API Gateway, SAM
+   - ESC Deployment Architectures Presentation
    - AWS AppSync
    - Serverless Deployment Designs
 
 6. **Distributed Systems & SaaS:**
    - Message Driven vs Event Driven
-   - Kafka, SQS, EventBridge, Active MQ, AWS Batch, AppFlow
+   - Kafka, SQS, SNS, EventBridge
+   - Active MQ, AWS Batch, AppFlow
    - Distributed System Design
    - SaaS Design
 
 7. **Automation in Cloud & Cloud OPS:**
-   - System Manager, Config, EventBridge, AWS X-ray, CloudWatch, CloudTrail
-   - Amazon Managed Grafana, AWS Inspector, AWS GuardDuty, Trusted Advisor
+   - System Manager, Config, EventBridge
+   - AWS X-ray, CloudWatch, CloudTrail
+   - Amazon Managed Grafana, AWS Inspector, Trusted Advisor
    - Amazon Managed Service for Prometheus
    - AWS personal health dashboard
    - AWS Resource Access Manager
    - From Monolith to Distributed System Deployment Design
 
-8. **Disaster Recovery & Migration:**
+8. **Disaster Recovery & Migration & Hybrid:**
    - DMS, AWS Backup, MGN, VMware
+   - AWS Snow Family
+   - AWS Transfer Family
+   - AWS Storage Gateway
    - Disaster Recovery Architecture
-   - Migration to AWS Architectures
+   - Migration from on prem to AWS Architectures
 
 9. **Security:**
-   - AWS WAF, AWS Shield, Firewall Manager, AWS Security Hub, Macie, Amazon Detective
-   - KMS, CloudHSM, Secret Manager, SSM Parameter Store
+   - What are Dos and DDos? Ddos constraints in aws
+   - AWS WAF, AWS Shield
+   - Firewall Manager, AWS GuardDuty, AWS Security Hub, Amazon Detective, Macie
+   - KMS, CloudHSM
+   - Secret Manager, SSM Parameter Store
    - AWS License Manager
-   - Security Best Practice
+   - Security Best Practice in AWS Account
 
 10. **Data & Analytics : Data Storage & Data Migration and Transfer:**
    - Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
    - AWS elastic transcoder
-   - Data Analytics System Designs
-   - AWS Snow Family, FSx, Storage Gateway, AWS Transfer Family, DataSync
+   - Data Analytics System Designs 
+   - FSx, DataSync
    - Data Migration Architectures
 
 ### Self Learning
@@ -138,3 +150,9 @@
 
 10. **Data & Analytics:**
     - Kinesis, Glue + S3 (ETL)
+
+
+
+https://disaster-recovery.workshop.aws/en/labs/advanced/api-gateway.html
+
+
