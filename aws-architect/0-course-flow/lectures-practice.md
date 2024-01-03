@@ -25,7 +25,8 @@
    - All Databases Comparison & use cases
 
 4. **VPC:**
-   - OSI, Network Protocols, Security Groups
+   - OSI, Network Protocols
+   - VPC Basics
    - Route53, DNSSEK
    - ACM
    - Transit Gateway, Site to Site VPN, Direct Connect
