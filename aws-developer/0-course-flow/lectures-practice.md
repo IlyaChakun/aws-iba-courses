@@ -9,7 +9,7 @@ Total Practices: **20**
 1. Acquaintance, Introduction, IMA, Active Directory, AWS Org, STS, Control Tower, EC2
 2. EBS, EFS, Instance Store
 3. ELB, TG, ASG, Beanstalk
-4. SQS, SNS, EventBridge, IaC (CloudFormation, CDK, SDK)
+4. message_vs_driver_driven_architecture, SQS, SNS, EventBridge, MQ, App Sync, IaC (CloudFormation, CDK, SDK)
 5. Cloud OPS: CloudWatch, CloudTrail, System Manager, AWS Config, Amazon Managed Grafana, AWS Inspector,
    AWS GuardDuty, Trusted Advisor, AWS personal health dashboard, AWS Resource Access Manager
 6. VPC (Part 1)

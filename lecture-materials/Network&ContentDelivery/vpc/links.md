@@ -9,6 +9,12 @@ https://www.wallarm.com/what/what-is-http-2-and-how-is-it-different-from-http-1
 https://aws.amazon.com/compare/the-difference-between-nfs-and-cifs/
 
 
+https://medium.com/nerd-for-tech/aws-networking-eni-ena-efa-2db316fdbf85
+https://varunmanik1.medium.com/aws-eni-vs-en-vs-efa-22250513590f
+
+
+!!!! https://d1.awsstatic.com/whitepapers/building-a-scalable-and-secure-multi-vpc-aws-network-infrastructure.pdf
+
 
 
 ---
