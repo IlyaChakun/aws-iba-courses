@@ -27,15 +27,18 @@
 4. **VPC:**
    - OSI, Network Protocols
    - VPC Basics
-   - Route53, DNSSEK
-   - ACM
-   - Transit Gateway, Site to Site VPN, Direct Connect
-   - Gateway Load Balancer
+   - VPC Endpoints
+   - VPC Peering
    - DHCP
    - EFA vs ENA
-   - Network Design Architectures
+   - Transit Gateway, Site to Site VPN, Direct Connect
+   - Gateway Load Balancer
+   - VPC Limits/perf optimizations
 
 5. **Containerization & Serverless:**
+   - Route53
+   - ACM
+   - Cloud WAN & AWS Network Manager
    - ECS, ECR
    - EKS, Copilot
    - Lambda, Step Functions, SWF
