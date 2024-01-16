@@ -35,17 +35,18 @@
    - Gateway Load Balancer
    - VPC Limits/perf optimizations
 
-5. **Containerization & Serverless:**
+5. **Containerization & Serverless:** 
    - Route53
    - ACM
    - Cloud WAN & AWS Network Manager
+   
    - ECS, ECR
    - EKS, Copilot
    - Lambda, Step Functions, SWF
    - API Gateway, SAM
-   - ESC Deployment Architectures Presentation
    - AWS AppSync
-   - Serverless Deployment Designs
+   - Autoscaling
+   - ESC Deployment Architecture
 
 6. **Distributed Systems & SaaS:**
    - Message Driven vs Event Driven
@@ -79,6 +80,7 @@
    - Secret Manager, SSM Parameter Store
    - AWS License Manager
    - Security Best Practice in AWS Account
+   - Security SOC (todo)
 
 10. **Data & Analytics : Data Storage & Data Migration and Transfer:**
    - Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
@@ -129,7 +131,10 @@
    - Practical test questions
 
 4. **Network Practice:**
-   - VPC Private Link, Transit Gateway VPC Setup, Pair VPCs with CIDR block conflict
+   - VPC Peering: VPC A, VPC B (2 public, 2 private subnet), 1 instance in private subnet, VPC peering (test ping from 1 private to another private)
+   - VPC Private Link
+   - VPC Transit Gateway
+   - Pair VPCs with CIDR block conflict
 
 5. **Containerization Deployment:**
    - ECS Deployment (EC2 and Fargate)

@@ -1,0 +1,3 @@
+https://aws.amazon.com/blogs/mt/monitoring-the-availability-and-health-of-on-premises-application-using-aws-cloudwatch-synthetics/
+
+

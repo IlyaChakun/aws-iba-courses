@@ -10,22 +10,37 @@ Total Practices: **20**
 2. EBS, EFS, Instance Store
 3. ELB, TG, ASG, Beanstalk
 4. message_vs_driver_driven_architecture, SQS, SNS, EventBridge, MQ, App Sync, IaC (CloudFormation, CDK, SDK)
-5. Cloud OPS: CloudWatch, CloudTrail, System Manager, AWS Config, Amazon Managed Grafana, AWS Inspector,
-   AWS GuardDuty, Trusted Advisor, AWS personal health dashboard, AWS Resource Access Manager
+5. Cloud OPS: 
+   - CloudWatch, CloudTrail, 
+   - System Manager, AWS Config,
+   - Amazon Managed Grafana, Amazon Managed Service for Prometheus 
+   - Trusted Advisor, AWS Inspector
+   - AWS personal health dashboard, AWS Resource Access Manager
+   - What is CloudOps ? DevOps vs cloudOps
 6. VPC (Part 1)
+    - OSI, Network Protocols
+    - VPC Basics
+    - VPC Endpoints
+    - VPC Peering
 7. VPC (Part 2)
+    - VPC Flow Logs
+    - Other VPC Features
+    - DHCP
+    - EFA vs ENA vs ENI
+    - Transit Gateway, Site to Site VPN, Direct Connect
+    - Gateway Load Balancer
 8. Route53 and ASM, Kinesis
-9. Security: KMS, Secret Manager, SSM
+9. Security: KMS, Cloud HSM, Secret Manager, SSM, AWS GuardDuty, Macie, Decective
 10. Cognito
 11. RDS, Aurora, ElastiCache + overview of other databases
 12. CloudFront, Global Accelerator
 13. S3 (Part 1)
 14. S3 (Part 2)
-15. ECS, ECR, Copilot
+15. ECS, ECR, Copilot, Auto Scaling, EKS
 16. DynamoDB, DAX
 17. Lambda, Step Functions, X-ray, API Gateway, SAM, SWF
 18. CI/CD, Cloud9, Amplify
-19. DDOS: WAF, Shield, GuardDuty, Personal Health
+19. DDOS: WAF, Shield
 20. Exam Preparation, Recap, Practical Tests
 
 ## Self Study
@@ -56,8 +71,8 @@ Total Practices: **20**
     * Beanstalk deployment for Demo App
    
 4. SQS, SNS, Lambda
-    * Configuring a CloudWatch Alarm for Lambda Invocation Errors with SNS Notifications
-    * Introduction to SQS Lab
+    * Configuring a CloudWatch Alarm for Lambda Invocation Errors with SNS NotifConfiguring a CloudWatch Alarm for Lambda Invocation Errors with SNS Notificationsications
+    * Introduction to SQS
     * Difference between SQS Visibility Timeout and Delay Queue Lab
    
 5. CloudWatch, CloudTrail, EventBridge, System Manager
