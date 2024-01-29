@@ -41,9 +41,9 @@
    - Cloud WAN & AWS Network Manager
    
    - ECS, ECR
-   - EKS, Copilot
-   - Lambda, Step Functions, SWF
-   - API Gateway, SAM
+   - EKS, Copilot 
+   - Step Functions, SWF
+   - API Gateway, SAM, Lambda
    - AWS AppSync
    - Autoscaling
    - ESC Deployment Architecture
@@ -52,17 +52,18 @@
    - Message Driven vs Event Driven
    - Kafka, SQS, SNS, EventBridge
    - Active MQ, AWS Batch, AppFlow
-   - Distributed System Design
    - SaaS Design
+   - From Monolith to Distributed System Deployment Design
+   - Distributed System Design
 
 7. **Automation in Cloud & Cloud OPS:**
+   - EventBridge
    - System Manager, Config, EventBridge
    - AWS X-ray, CloudWatch, CloudTrail
-   - Amazon Managed Grafana, AWS Inspector, Trusted Advisor
-   - Amazon Managed Service for Prometheus
+   - Amazon Managed Grafana, Amazon Managed Service for Prometheus
+   - AWS Inspector, Trusted Advisor
    - AWS personal health dashboard
    - AWS Resource Access Manager
-   - From Monolith to Distributed System Deployment Design
 
 8. **Disaster Recovery & Migration & Hybrid:**
    - DMS, AWS Backup, MGN, VMware
@@ -70,7 +71,6 @@
    - AWS Transfer Family
    - AWS Storage Gateway
    - Disaster Recovery Architecture
-   - Migration from on prem to AWS Architectures
 
 9. **Security:**
    - What are Dos and DDos? Ddos constraints in aws
@@ -78,7 +78,7 @@
    - Firewall Manager, AWS GuardDuty, AWS Security Hub, Amazon Detective, Macie
    - KMS, CloudHSM
    - Secret Manager, SSM Parameter Store
-   - AWS License Manager
+   - AWS License Manager, AWS Artifact
    - Security Best Practice in AWS Account
    - Security SOC (todo)
 
@@ -87,7 +87,6 @@
    - AWS elastic transcoder
    - Data Analytics System Designs 
    - FSx, DataSync
-   - Data Migration Architectures
 
 ### Self Learning
 
@@ -159,9 +158,5 @@
 
 10. **Data & Analytics:**
     - Kinesis, Glue + S3 (ETL)
-
-
-
-https://disaster-recovery.workshop.aws/en/labs/advanced/api-gateway.html
 
 

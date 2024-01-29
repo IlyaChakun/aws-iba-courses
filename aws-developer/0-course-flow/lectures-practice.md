@@ -23,6 +23,7 @@ Total Practices: **20**
     - VPC Endpoints
     - VPC Peering
 7. VPC (Part 2)
+    - VPC Endpoints !
     - VPC Flow Logs
     - Other VPC Features
     - DHCP
@@ -77,14 +78,18 @@ Total Practices: **20**
    
 5. CloudWatch, CloudTrail, EventBridge, System Manager
     * Install CloudWatch Logs Agent on EC2 Instance and View CloudWatch Metrics
-    * AWS Access control alerts with CloudWatch and CloudTrail
+    * AWS Access control alerts with CloudWatch and CloudTrail ----
     * Automating EBS Snapshot Creation Using CloudWatch and SNS
-    * CronJobs via aws: EventBridge + Lambda
-    * S3 + eventBridge + Event notification + SNS + Email message
+    * CronJobs via aws: EventBridge + Lambda   -----
+    * S3 + eventBridge + Event notification + SNS + Email message   ----
    
 6. VPC (Part 1)
-    * Create manual VPC setup
+    * Create manual VPC setup A
+      * 2 public 2 private 2 database subnets
+      * create instances and check inet connection
+      * Enable vpc hostnames
     * VPC peering
+      * Create vpc B and implement peering connection with vpc A
     * VPC Gateway endpoint
     * VPC Flow Logs: Creating AWS VPC Flow Logs and Generating Traffic
    
