@@ -75,13 +75,13 @@ $TTL 86400
 ; Specify our two nameservers
 @ IN  NS    dnsA.iba.internal.
 @ IN  NS    dnsB.iba.internal.
-; Resolve nameserver hostnames to IP, replace with your two droplet IP addresses.
-@ dnsA   IN  A   1.1.1.1
-@ dnsB    qIN  A   8.8.8.8
-; Define hostname -> IP pairs which you wish to resolve
-@     IN  A   10.0.x.x
-app   IN  A   10.0.x.x
-db    IN  A   10.0.x.x
+; Resolve nameserver hostnames to IP, replace with your two internal IP addresses.
+dnsA   IN  A   1.1.1.1
+dnsB   IN  A   8.8.8.8
+; Define hostname -> IP pairs which you wish to resolvee
+app   IN  A   10.0.150.24
+db    IN  A   10.0.136.20
+
 ```
 
 4. Create file /etc/named.conf [Replace X.X with your DNS server IP]

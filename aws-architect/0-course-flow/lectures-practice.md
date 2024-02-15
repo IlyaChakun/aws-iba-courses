@@ -32,14 +32,13 @@
    - DHCP
    - EFA vs ENA
    - Transit Gateway, Site to Site VPN, Direct Connect
-   - Gateway Load Balancer
-   - VPC Limits/perf optimizations
-
-5. **Containerization & Serverless:** 
+   - Gateway Load Balancer 
    - Route53
    - ACM
+   - VPC Limits/perf optimizations
+
+5. **Containerization & Serverless:**
    - Cloud WAN & AWS Network Manager
-   
    - ECS, ECR
    - EKS, Copilot 
    - Step Functions, SWF
@@ -61,32 +60,45 @@
    - System Manager, Config, EventBridge
    - AWS X-ray, CloudWatch, CloudTrail
    - Amazon Managed Grafana, Amazon Managed Service for Prometheus
+   - QuickSight
    - AWS Inspector, Trusted Advisor
    - AWS personal health dashboard
    - AWS Resource Access Manager
 
 8. **Disaster Recovery & Migration & Hybrid:**
-   - DMS, AWS Backup, MGN, VMware
+   - AWS DMS
+   - AWS Backup
+   - VMware
+   - AWS Migration Hub (add more)
+   - DataSync
+   - AWS Application Discovery Service, AWS Application Migration Service
    - AWS Snow Family
    - AWS Transfer Family
    - AWS Storage Gateway
    - Disaster Recovery Architecture
 
 9. **Security:**
-   - What are Dos and DDos? Ddos constraints in aws
-   - AWS WAF, AWS Shield
-   - Firewall Manager, AWS GuardDuty, AWS Security Hub, Amazon Detective, Macie
+   - Firewall Manager, AWS GuardDuty, AWS Security Hub, Amazon Detective, AWS Macie
    - KMS, CloudHSM
    - Secret Manager, SSM Parameter Store
    - AWS License Manager, AWS Artifact
+   - AWS SSO
+   - STS
    - Security Best Practice in AWS Account
+   - What are Dos and DDos? Ddos constraints in aws
+   - AWS WAF, AWS Shield
    - Security SOC (todo)
 
 10. **Data & Analytics : Data Storage & Data Migration and Transfer:**
-   - Kinesis, Athena, Redshift, OpenSearch, EMR, QuickSight, Glue, LakeFormation, MSK
-   - AWS elastic transcoder
-   - Data Analytics System Designs 
-   - FSx, DataSync
+   - Cognito
+   - Kinesis, Athena
+   - Redshift, EMR, Glue
+   - LakeFormation, MSK
+   - OpenSearch, QuickSight
+   - AWS elastic transcoder 
+   - FSx
+   - ML Services
+   - Data Analytics System Designs
 
 ### Self Learning
 

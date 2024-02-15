@@ -23,25 +23,40 @@ Total Practices: **20**
     - VPC Endpoints
     - VPC Peering
 7. VPC (Part 2)
-    - VPC Endpoints !
     - VPC Flow Logs
     - Other VPC Features
     - DHCP
     - EFA vs ENA vs ENI
     - Transit Gateway, Site to Site VPN, Direct Connect
     - Gateway Load Balancer
-8. Route53 and ASM, Kinesis
-9. Security: KMS, Cloud HSM, Secret Manager, SSM, AWS GuardDuty, Macie, Decective
-10. Cognito
-11. RDS, Aurora, ElastiCache + overview of other databases
+8. Route53 and ASM, Kinesis, Redshift, Athena, Quicksight
+9. Security: 
+    - Security Hub
+    - AWS GuardDuty
+    - Macie
+    - AWS Detective
+    - Secret Manager
+    - SSM
+    - CloudShell
+    - STS
+    - KMS
+    - Cloud HSM
+    - AWS SSO
+10. Cognito KMS 33 slide
+    - Cloud HSM
+11. Databases
+    - RDS
+    - Aurora
+    - ElastiCache 
+    - overview of other databases
 12. CloudFront, Global Accelerator
 13. S3 (Part 1)
 14. S3 (Part 2)
 15. ECS, ECR, Copilot, Auto Scaling, EKS
 16. DynamoDB, DAX
 17. Lambda, Step Functions, X-ray, API Gateway, SAM, SWF
-18. CI/CD, Cloud9, Amplify
-19. DDOS: WAF, Shield
+18. CI/CD (CodeCommit, CodeBuild, CodeDeploy, CodeStar), CodeArtifact, Cloud9, Amplify, CloudShell
+19. DDOS: WAF, Shield, Load Testing, Firewall Manager
 20. Exam Preparation, Recap, Practical Tests
 
 ## Self Study
@@ -94,8 +109,10 @@ Total Practices: **20**
     * VPC Flow Logs: Creating AWS VPC Flow Logs and Generating Traffic
    
 7. VPC (Part 2)
+    * Transit Gateway setup for 2 VPSes 
     * VPC Interface endpoint and SQS
     * VPC Private Link: Create private connection between two vpcs using ELB
+    * DHCP using R53 and custom DNS Server
 
 8. **Practical Tests**
 
