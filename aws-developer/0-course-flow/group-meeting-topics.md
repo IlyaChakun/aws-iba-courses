@@ -14,7 +14,7 @@
 | №   | Topic                                     | Person |
 |-----|-------------------------------------------|--------|
 | 1   | EBS                                       |        |
-| 2   | EFS                                       |        |
+| 2   | EFS                        9              |        |
 | 3   | ALB: Network vs Application, Target Group |        |
 | 4   | Instance Store, Security Group            |        |   
 | 5   | NLB                                       |        | 

@@ -98,7 +98,6 @@
    - AWS elastic transcoder 
    - FSx
    - ML Services
-   - Data Analytics System Designs
 
 ### Self Learning
 

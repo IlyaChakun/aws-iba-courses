@@ -42,8 +42,7 @@ Total Practices: **20**
     - KMS
     - Cloud HSM
     - AWS SSO
-10. Cognito KMS 33 slide
-    - Cloud HSM
+10. Cognito
 11. Databases
     - RDS
     - Aurora
