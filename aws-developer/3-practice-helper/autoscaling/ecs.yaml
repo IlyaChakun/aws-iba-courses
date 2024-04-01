@@ -229,7 +229,7 @@ Resources:
             StatusCode: 404
       SslPolicy: "ELBSecurityPolicy-TLS-1-2-2017-01"
       Certificates:
-        - CertificateArn: "arn:aws:acm:us-east-1:421419650768:certificate/0c0da994-5547-49bb-8ed8-658f53a9a6ab" # todo certificate ARN
+        - CertificateArn: "arn:aws:acm:eu-central-2:741523941546:certificate/8ac6aefc-89e0-45ab-823a-1afc679fbfe5" # todo certificate ARN
       LoadBalancerArn:
         Ref: ALB
       Port: 443

@@ -1,5 +1,11 @@
 # Global Accelerator
 
+- EFS, EC2, ALB, TG, Global Accelerator, Route53
+  - Create a deployment for 2 ALBs with TG, EC2 instances in different regions using Global Accelerator
+  - You can test via IP address from Global Accelerator or Add route53 record and test via dns
+  - Show the failover case (when one of the region went down)
+  - Draw Deployment Schema
+
 # CloudFront
 
 ## Introduction to Amazon CloudFront

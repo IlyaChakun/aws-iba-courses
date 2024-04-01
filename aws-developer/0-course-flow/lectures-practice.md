@@ -92,10 +92,10 @@ Total Practices: **20**
    
 5. CloudWatch, CloudTrail, EventBridge, System Manager
     * Install CloudWatch Logs Agent on EC2 Instance and View CloudWatch Metrics
-    * AWS Access control alerts with CloudWatch and CloudTrail ----
+    * AWS Access control alerts with CloudWatch and CloudTrail
     * Automating EBS Snapshot Creation Using CloudWatch and SNS
-    * CronJobs via aws: EventBridge + Lambda   -----
-    * S3 + eventBridge + Event notification + SNS + Email message   ----
+    * CronJobs via aws: EventBridge + Lambda
+    * S3 + eventBridge + Event notification + SNS + Email message
    
 6. VPC (Part 1)
     * Create manual VPC setup A
@@ -144,6 +144,7 @@ Total Practices: **20**
     * Setup lifecycle policy for s3 bucket files
     * S3 Encryption
     * Discover sensitive data present in S3 bucket using Amazon Macie
+    * Cloudfront + ALB
 
 14. **Practical Tests**
 

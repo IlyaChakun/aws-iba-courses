@@ -1,3 +1,6 @@
 
 https://aws.amazon.com/blogs/architecture/its-adopts-microservices-architecture-for-improved-air-travel-search-engine/
 
+https://www.youtube.com/watch?v=MZBbhqt6bQs
+
+https://www.youtube.com/watch?v=Hr-zOaBGyEA

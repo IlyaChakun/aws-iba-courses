@@ -1,0 +1,10 @@
+https://www.youtube.com/watch?v=yvBR71D0nAQ
+
+https://d1.awsstatic.com/events/reinvent/2019/Amazon_DynamoDB_Under_the_hood_of_a_hyperscale_database_DAT325.pdf
+
+https://pdos.csail.mit.edu/6.824/papers/dynamo.pdf
+
+https://pdos.csail.mit.edu/6.824/papers/atc22-dynamodb.pdf
+
+https://css.csail.mit.edu/6.824/2014/papers/paxos-simple.pdf
+
