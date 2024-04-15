@@ -1,0 +1,303 @@
+name: HTTP & USAGE Main
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: [self-hosted, linux, x64, pci-proxy, AWS-fargate]
+    permissions:
+      contents: read
+
+    # tests should run every time
+    # if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
+      - name: Setup Java 21
+        uses: actions/setup-java@v3.13.0
+        with:
+          distribution: 'corretto'
+          java-version: 21
+          cache: 'maven'
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.10.0
+        with:
+          java-version: 21
+          maven-version: 3.9.5
+      - name: Cache maven
+        uses: actions/cache@v3
+        with:
+          path: |
+            '~/.m2'
+          key: ${{ runner.os}}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os}}-m2-
+
+      - name: Test
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        run: mvn -B clean verify sonar:sonar
+
+  http-build-and-publish-jar:
+    runs-on: [self-hosted, linux, x64, pci-proxy, AWS-fargate]
+    environment: shared-services
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs:
+      - test
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
+      - name: Setup Java 21
+        uses: actions/setup-java@v3.13.0
+        with:
+          distribution: 'corretto'
+          java-version: 21
+          cache: 'maven'
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.10.0
+        with:
+          java-version: 21
+          maven-version: 3.9.5
+      - name: Cache maven
+        uses: actions/cache@v3
+        with:
+          path: |
+            '~/.m2'
+          key: ${{ runner.os}}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os}}-m2-
+      - name: install-aws-cli
+        run: |
+          apt update && apt install pip
+          pip install awscli
+
+      - name: HTTP bump version
+        id: version
+        run: |
+          export VERSION=$(date +%Y%m%d-%H%M%S)-${GITHUB_SHA::7}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          mvn -pl http -B versions:set -DnewVersion=$VERSION
+
+      - name: Build HTTP artifact
+        run: mvn clean package -pl http -am -B -DskipTests=true
+
+      - name: Configure AWS credentials - Shared Services Account
+        id: configure-aws
+        uses: aws-actions/configure-aws-credentials@v1-node16
+        with:
+          role-to-assume: ${{ secrets.AWS_OIDC_IAM_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: PCI-Proxy-Shared-OIDC
+
+      - name: Push JAR file to s3
+        run: |
+          aws s3 cp --endpoint-url https://bucket.vpce-064462668ef183caa-4lgpr9u9.s3.eu-central-1.vpce.amazonaws.com --region eu-central-1 http/target/pciproxy-http-${{ steps.version.outputs.version }}.jar s3://maven-artifacts-shared/pci-proxy/http/pciproxy-http-${{ steps.version.outputs.version }}.jar
+
+      - name: Store artifact
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          name: "pciproxy-http-${{ steps.version.outputs.version }}"
+          path: http/target/*.jar
+          if-no-files-found: error
+          retention-days: 1
+
+  usage-build-and-publish-jar:
+    runs-on: [self-hosted, linux, x64, pci-proxy, AWS-fargate]
+    environment: shared-services
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: test
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
+      - name: Setup Java 21
+        uses: actions/setup-java@v3.13.0
+        with:
+          distribution: 'corretto'
+          java-version: 21
+          cache: 'maven'
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.10.0
+        with:
+          java-version: 21
+          maven-version: 3.9.5
+      - name: Cache maven
+        uses: actions/cache@v3
+        with:
+          path: |
+            '~/.m2'
+          key: ${{ runner.os}}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os}}-m2-
+
+      - name: install-aws-cli
+        run: |
+          apt update && apt install pip
+          pip install awscli
+
+      - name: Usage bump version
+        id: version
+        run: |
+          export VERSION=$(date +%Y%m%d-%H%M%S)-${GITHUB_SHA::7}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          mvn -pl usage -B versions:set -DnewVersion=$VERSION
+
+      - name: Build Usage artifact
+        run: mvn clean package -pl usage -am -B -DskipTests=true
+
+      - name: Configure AWS credentials - Shared Services Account
+        id: configure-aws
+        uses: aws-actions/configure-aws-credentials@v1-node16
+        with:
+          role-to-assume: ${{ secrets.AWS_OIDC_IAM_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: PCI-Proxy-Shared-OIDC
+
+      - name: Push JAR file to s3
+        run: |
+          aws s3 cp --endpoint-url https://bucket.vpce-064462668ef183caa-4lgpr9u9.s3.eu-central-1.vpce.amazonaws.com --region eu-central-1 usage/target/pciproxy-usage-${{ steps.version.outputs.version }}.jar s3://maven-artifacts-shared/pci-proxy/usage/pciproxy-usage-${{ steps.version.outputs.version }}.jar
+
+      - name: Store artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: "pciproxy-usage-${{ steps.version.outputs.version }}"
+          path: usage/target/*.jar
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Update action summary
+        run: |
+          echo "### Artifacts :inbox_tray:" >> $GITHUB_STEP_SUMMARY
+          echo "**Version**: ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**JAR File**: s3://maven-artifacts-shared/pci-proxy/usage/pciproxy-usage-${{ steps.version.outputs.version }}.jar" >> $GITHUB_STEP_SUMMARY
+
+  http-build-and-publish-docker:
+    runs-on: ubuntu-latest
+    environment: shared-services
+    needs:
+      - test
+      - http-build-and-publish-jar
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
+
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.1
+        with:
+          # Artifact name
+          name: "pciproxy-http-${{ needs.http-build-and-publish-jar.outputs.version }}"
+          # Destination path
+          path: http/target/
+
+      - name: Configure AWS credentials - Shared Services Account
+        id: configure-aws
+        uses: aws-actions/configure-aws-credentials@v1-node16
+        with:
+          role-to-assume: ${{ secrets.AWS_OIDC_IAM_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: PCI-Proxy-Shared-OIDC
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Push Docker Image to Amazon ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: pci-proxy
+          IMAGE_TAG: ${{ needs.http-build-and-publish-jar.outputs.version }}
+        run: |
+          cd http
+          docker build -f docker/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+      - name: Update action summary
+        run: |
+          echo "### Artifacts :inbox_tray:" >> $GITHUB_STEP_SUMMARY
+          echo "**Version**: ${{ needs.http-build-and-publish-jar.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Docker Image**: ${{ steps.login-ecr.outputs.registry }}/pci-proxy:${{ needs.http-build-and-publish-jar.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**JAR File**: s3://maven-artifacts-shared/pci-proxy/http/pciproxy-http-${{ needs.http-build-and-publish-jar.outputs.version }}.jar" >> $GITHUB_STEP_SUMMARY
+
+  http-deploy-to-dev:
+    runs-on: ubuntu-latest
+    environment: dev
+    needs:
+      - test
+      - http-build-and-publish-jar
+      - http-build-and-publish-docker
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: ECS data
+        id: ecs_data
+        run: |
+          echo "cluster=$ECS_CLUSTER" >> $GITHUB_OUTPUT
+          echo "service=$ECS_SERVICE" >> $GITHUB_OUTPUT
+          echo "task_definition=$ECS_SERVICE_TASK_DEFINITION" >> $GITHUB_OUTPUT
+        env:
+          ECS_CLUSTER: 'dev-dtcloud-pci-proxy'
+          ECS_SERVICE: 'pci-proxy'
+          ECS_SERVICE_TASK_DEFINITION: 'dev-dtcloud-pci-proxy-pci-proxy'
+
+      - name: Configure AWS credentials - Dev Account
+        id: configure-aws
+        uses: aws-actions/configure-aws-credentials@v1-node16
+        with:
+          role-to-assume: ${{ secrets.AWS_OIDC_IAM_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: PCI-Proxy-Dev-OIDC
+
+      - name: Download task definition
+        run: |
+          TASK_DEFINITION=$(aws ecs describe-services --cluster ${{ steps.ecs_data.outputs.cluster }} --services ${{ steps.ecs_data.outputs.service }} | jq -r '.services[0].taskDefinition')
+          TASK_DEFINITION_REVISION=$(echo $TASK_DEFINITION | awk -F: '{print $NF}')
+          echo $TASK_DEFINITION
+          echo $TASK_DEFINITION_REVISION
+          aws ecs describe-task-definition --task-definition ${{ steps.ecs_data.outputs.task_definition }}:$TASK_DEFINITION_REVISION --query taskDefinition | jq -r 'del(.compatibilities,.taskDefinitionArn,.requiresAttributes,.revision,.status,.registeredBy,.registeredAt)' > task-definition.json
+          echo "Current running image: " $(cat task-definition.json | jq -r '.containerDefinitions[0].image')
+          echo "cat task-definition.json"
+          cat task-definition.json
+
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: task-definition.json
+          container-name: pci-proxy
+          image: ${{ secrets.SHARED_SERVICES_ECR_REGISTRY_URL }}/pci-proxy:${{ needs.http-build-and-publish-jar.outputs.version }}
+
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: ${{ steps.ecs_data.outputs.service }}
+          cluster: ${{ steps.ecs_data.outputs.cluster }}
+          wait-for-service-stability: true

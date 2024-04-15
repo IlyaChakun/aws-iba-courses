@@ -57,6 +57,8 @@ And after this just verify if its alive
 
 ```
 sudo gitlab-runner verify
+
+sudo gitlab-runner run
 ```
 ![img_6.png](assets/ec2_runner_verify.png)
 
